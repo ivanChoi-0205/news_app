@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'custom_bottom_navigation_util.dart';
+
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({
     Key? key,
@@ -12,9 +14,9 @@ class CustomBottomNavigationBar extends StatefulWidget {
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   int currentIndex = 2;
+  final navigatorBarItem = NavigationBarItem();
 
   _updatePageIndex(int newIndex) {
-    debugPrint(newIndex.toString());
     setState(() {
       currentIndex = newIndex;
     });
@@ -29,28 +31,13 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       enableFeedback: true,
       backgroundColor: Colors.black.withOpacity(0.5),
       onTap: (value) => _updatePageIndex(value),
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(Icons.live_tv_rounded),
-          label: '直播',
+      items: List.generate(
+        navigatorBarItem.length,
+        (index) => BottomNavigationBarItem(
+          icon: navigatorBarItem.items[index].icon,
+          label: navigatorBarItem.items[index].label,
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.chat),
-          label: '網誌',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: '主頁',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.podcasts),
-          label: '播客',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person),
-          label: '個人主頁',
-        ),
-      ],
+      ),
     );
   }
 }
