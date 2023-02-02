@@ -14,7 +14,7 @@ class CustomBottomNavigationBar extends StatefulWidget {
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   int currentIndex = 2;
-  final navigatorBarItem = NavigationBarItem();
+  final navigationBarItem = NavigationBarItem();
 
   _updatePageIndex(int newIndex) {
     setState(() {
@@ -32,10 +32,10 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       backgroundColor: Colors.black.withOpacity(0.5),
       onTap: (value) => _updatePageIndex(value),
       items: List.generate(
-        navigatorBarItem.length,
+        navigationBarItem.length,
         (index) => BottomNavigationBarItem(
-          icon: navigatorBarItem.items[index].icon,
-          label: navigatorBarItem.items[index].label,
+          icon: navigationBarItem.items[index].icon,
+          label: navigationBarItem.items[index].label,
         ),
       ),
     );
