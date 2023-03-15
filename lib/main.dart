@@ -6,8 +6,13 @@ import 'src/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
 import 'src/layout_states/layout_notifier.dart';
 import 'src/layout_states/layout_states.dart';
 import 'src/util/layout_util.dart';
+import 'src/util/service/vibration_service.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  VibrationService().init();
+
   runApp(
     const ProviderScope(
       child: MyApp(),

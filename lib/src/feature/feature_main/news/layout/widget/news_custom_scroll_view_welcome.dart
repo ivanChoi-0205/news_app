@@ -9,12 +9,8 @@ class NewsCustomScrollViewWelcome extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Column(
-        // mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
-          // SizedBox(
-          //   height: 50,
-          // ),
           Text(
             'Hello',
             style: TextStyle(
