@@ -43,7 +43,7 @@ class VibrationService {
     }
   }
 
-  void errorFeedback() async {
+  void errorFeedback() {
     if (_userEnableVibration && _hasCustomVibrator) {
       Vibration.vibrate(duration: 500);
     }
@@ -54,6 +54,8 @@ class VibrationService {
       Vibration.vibrate(duration: 50);
     }
   }
+
+  // Vibration would work even device system disable
 
   // TODO: user set vibration enable or not => setVibration()
 
