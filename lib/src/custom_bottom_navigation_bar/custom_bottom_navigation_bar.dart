@@ -4,7 +4,7 @@ import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../layout_states/layout_notifier.dart';
+import '../states/layout_state/layout_notifier.dart';
 import '../util/layout_util.dart';
 
 //! this nav bar would rebuild so many times during keyboard show up animation
@@ -27,8 +27,11 @@ class CustomBottomNavigationBar extends ConsumerWidget {
       'CustomBottomNavigationBar builded \ncurrentLayoutType: ${layoutStates.layoutType}}',
     );
     final bottomPadding = MediaQuery.of(context).padding.bottom;
+
     return Padding(
-      padding: EdgeInsets.only(bottom: bottomPadding),
+      padding: EdgeInsets.only(
+        bottom: bottomPadding == 0 ? 32.0 : bottomPadding,
+      ),
       child: CustomNavigationBar(
         currentIndex: currentLayoutIndex,
         iconSize: 30.0,

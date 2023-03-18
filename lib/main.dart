@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'src/constants/src/enum.dart';
 import 'src/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
-import 'src/layout_states/layout_notifier.dart';
-import 'src/layout_states/layout_states.dart';
+import 'src/states/layout_state/layout_notifier.dart';
+import 'src/states/layout_state/layout_states.dart';
 import 'src/util/layout_util.dart';
 import 'src/util/service/vibration_service.dart';
 
