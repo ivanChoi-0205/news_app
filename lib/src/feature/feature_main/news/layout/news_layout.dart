@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../../../../util/service/vibration_service.dart';
+import '../widget/news_drawer.dart';
 import 'widget/news_custom_scroll_view_app_bar.dart';
 import 'widget/news_custom_scroll_view_listview.dart';
 import 'widget/news_custom_scroll_view_search_bar.dart';
@@ -38,23 +40,40 @@ class _NewsLayoutState extends State<NewsLayout> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.grey.shade200,
-      child: CustomScrollView(
+    return Scaffold(
+      backgroundColor: Colors.grey.shade200,
+      // drawerEnableOpenDragGesture: false,
+      drawer: const NewsDrawer(),
+      body: CustomScrollView(
         controller: _controller,
         // physics:,
         // keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-        slivers: const [
-          NewsCustomScrollViewAppBar(),
-          SliverPadding(
+        slivers: [
+          NewsCustomScrollViewAppBar(
+            leadingWidget: Builder(
+              builder: (context) {
+                return GestureDetector(
+                  onTap: () {
+                    VibrationService().clickFeedback();
+                    Scaffold.of(context).openDrawer();
+                  },
+                  child: const Icon(
+                    Icons.menu_rounded,
+                    color: Colors.black,
+                  ),
+                );
+              },
+            ),
+          ),
+          const SliverPadding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
             sliver: NewsCustomScrollViewWelcome(),
           ),
-          SliverPadding(
+          const SliverPadding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             sliver: NewsCustomScrollViewSearchBar(),
           ),
-          SliverPadding(
+          const SliverPadding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             sliver: NewsCustomScrollViewListView(),
           ),

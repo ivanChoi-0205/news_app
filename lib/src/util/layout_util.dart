@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../constants/src/enum.dart';
 import '../feature/feature_main/blogger/layout/blogger_layout.dart';
-import '../feature/feature_main/live/layout/live_layout.dart';
 import '../feature/feature_main/news/layout/news_layout.dart';
 import '../feature/feature_main/podcasts/layout/podcasts_layout.dart';
-import '../feature/feature_main/profile/layout/profile_layout.dart';
 
 final Map<LayoutType, LayoutItemEntity> layoutsEntity = {
   LayoutType.podcasts: LayoutItemEntity(
@@ -13,11 +11,11 @@ final Map<LayoutType, LayoutItemEntity> layoutsEntity = {
     navBarLabel: '播客',
     layoutWidget: const PodcastsLayout(),
   ),
-  LayoutType.live: LayoutItemEntity(
-    navBarIcon: const Icon(Icons.live_tv_rounded),
-    navBarLabel: '直播',
-    layoutWidget: const LiveLayout(),
-  ),
+  // LayoutType.live: LayoutItemEntity(
+  //   navBarIcon: const Icon(Icons.live_tv_rounded),
+  //   navBarLabel: '直播',
+  //   layoutWidget: const LiveLayout(),
+  // ),
   LayoutType.news: LayoutItemEntity(
     navBarIcon: const Icon(Icons.newspaper_rounded),
     navBarLabel: '主頁',
@@ -28,11 +26,11 @@ final Map<LayoutType, LayoutItemEntity> layoutsEntity = {
     navBarLabel: '網誌',
     layoutWidget: const BloggerLayout(),
   ),
-  LayoutType.profile: LayoutItemEntity(
-    navBarIcon: const Icon(Icons.person_rounded),
-    navBarLabel: '個人主頁',
-    layoutWidget: const ProfileLayout(),
-  ),
+  // LayoutType.profile: LayoutItemEntity(
+  //   navBarIcon: const Icon(Icons.person_rounded),
+  //   navBarLabel: '個人主頁',
+  //   layoutWidget: const ProfileLayout(),
+  // ),
 };
 
 // final list/map [...layoutEntity ...subFeatureEntity]

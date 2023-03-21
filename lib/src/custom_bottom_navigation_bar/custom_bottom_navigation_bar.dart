@@ -3,13 +3,13 @@ import 'dart:developer';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:news_app/src/util/service/vibration_service.dart';
 
 import '../states/layout_state/layout_notifier.dart';
 import '../util/layout_util.dart';
 
 //! this nav bar would rebuild so many times during keyboard show up animation
 //! cannot use
-
 class CustomBottomNavigationBar extends ConsumerWidget {
   const CustomBottomNavigationBar({
     Key? key,
@@ -40,8 +40,9 @@ class CustomBottomNavigationBar extends ConsumerWidget {
         borderRadius: const Radius.circular(20.0),
         isFloating: true,
         onTap: (index) {
-          final LayoutNotifier notifier = ref.read(layoutProvider.notifier);
+          VibrationService().clickFeedback();
 
+          final LayoutNotifier notifier = ref.read(layoutProvider.notifier);
           final newLayoutType = getLayoutTypeEnumByIndex(index);
           notifier.onLayoutTypeChanged(newLayoutType);
         },

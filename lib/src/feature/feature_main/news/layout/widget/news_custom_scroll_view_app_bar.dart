@@ -3,11 +3,14 @@ import 'package:flutter/material.dart';
 class NewsCustomScrollViewAppBar extends StatelessWidget {
   const NewsCustomScrollViewAppBar({
     Key? key,
+    required this.leadingWidget,
   }) : super(key: key);
+
+  final Widget leadingWidget;
 
   @override
   Widget build(BuildContext context) {
-    return const SliverAppBar(
+    return SliverAppBar(
       // flexibleSpace: Container(
       // width: 20,
       // height: 50,
@@ -27,15 +30,12 @@ class NewsCustomScrollViewAppBar extends StatelessWidget {
       // floating: true,
       // snap: true,
       centerTitle: true,
-      leading: Icon(
-        Icons.menu_rounded,
-        color: Colors.black,
-      ),
-      title: Text(
+      leading: leadingWidget,
+      title: const Text(
         'Welcome to the news page',
         style: TextStyle(color: Colors.black),
       ),
-      actions: [
+      actions: const [
         CircleAvatar(
           child: Icon(
             Icons.person_outline_rounded,

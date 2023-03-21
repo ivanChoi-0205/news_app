@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import '../../../../util/service/vibration_service.dart';
@@ -31,12 +33,29 @@ class ProfileLayout extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                VibrationService().slideFeedback();
+                // VibrationService().slideFeedback();
+                VibrationService().clickFeedback();
+
+                log('Background');
               },
               child: Container(
                 height: 100,
-                width: 100,
+                width: 200,
                 color: Colors.red,
+              ),
+            ),
+            ElevatedButton.icon(
+              onPressed: () {
+                const snackBar = SnackBar(
+                  backgroundColor: Colors.transparent,
+                  content: Text('data'),
+                  // dismissDirection:DismissDirection.up,
+                );
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              },
+              icon: const Icon(Icons.no_accounts),
+              label: const Text(
+                'label',
               ),
             ),
           ],
