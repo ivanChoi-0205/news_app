@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
-import '../../../../util/service/vibration_service.dart';
+import '../../../../service/vibration_service.dart';
 
 class ProfileLayout extends StatelessWidget {
   const ProfileLayout({

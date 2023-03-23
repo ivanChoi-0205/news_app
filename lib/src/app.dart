@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'service/api/api.dart';
 import 'constants/src/enum.dart';
 import 'custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
 import 'states/layout_state/layout_notifier.dart';
@@ -44,10 +47,24 @@ class _AppState extends ConsumerState<App> {
 
   @override
   Widget build(BuildContext context) {
+    log(apiUrl);
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // useMaterial3: true,
+        useMaterial3: true,
+        // colorScheme: ColorScheme(
+        //   brightness: Brightness.light,
+        //   background: Colors.grey.shade200,
+        //   error: Colors.red.shade400,
+        //   onBackground: Colors.white,
+        //   onError: Colors.red.shade200,
+        //   onPrimary: Colors.white,
+        //   onSecondary: Colors.white,
+        //   onSurface: Colors.white,
+        //   primary: Colors.white,
+        //   secondary: Colors.white,
+        //   surface: Colors.white,
+        // ),
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
@@ -65,10 +82,10 @@ class _AppState extends ConsumerState<App> {
                 curve: Curves.ease,
               );
             });
-            final layoutStates = ref.watch(layoutProvider);
-            final currentLayoutIndex = getIndexByLayoutEnumName(
-              layoutStates.layoutType,
-            );
+            // final layoutStates = ref.watch(layoutProvider);
+            // final currentLayoutIndex = getIndexByLayoutEnumName(
+            //   layoutStates.layoutType,
+            // );
             return PageView(
               controller: _controller,
               physics: const NeverScrollableScrollPhysics(),

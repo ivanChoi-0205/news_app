@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'src/app.dart';
-import 'src/util/service/vibration_service.dart';
+import 'src/service/vibration_service.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

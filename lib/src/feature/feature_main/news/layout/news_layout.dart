@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../../util/service/vibration_service.dart';
+import '../../../../service/vibration_service.dart';
 import '../widget/news_drawer.dart';
 import 'widget/news_custom_scroll_view_app_bar.dart';
 import 'widget/news_custom_scroll_view_listview.dart';

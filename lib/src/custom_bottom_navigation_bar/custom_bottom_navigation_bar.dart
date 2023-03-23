@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:news_app/src/util/service/vibration_service.dart';
+import 'package:news_app/src/service/vibration_service.dart';
 
 import '../states/layout_state/layout_notifier.dart';
 import '../util/layout_util.dart';
@@ -39,12 +39,16 @@ class CustomBottomNavigationBar extends ConsumerWidget {
         backgroundColor: Colors.grey.shade200,
         borderRadius: const Radius.circular(20.0),
         isFloating: true,
-        onTap: (index) {
+        onTap: (index) async {
           VibrationService().clickFeedback();
 
           final LayoutNotifier notifier = ref.read(layoutProvider.notifier);
           final newLayoutType = getLayoutTypeEnumByIndex(index);
           notifier.onLayoutTypeChanged(newLayoutType);
+
+          // final service = DioService();
+          // final data = await service.get();
+          // log(data.toString());
         },
         items: List.generate(
           layoutTypeCount,

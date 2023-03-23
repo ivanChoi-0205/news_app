@@ -12,13 +12,14 @@ class NewsDrawerItemEntity {
     // required this.routePath,
     required this.group, // show list would group by this variable
   }) {
-    final groupList = ['A', 'B', 'C', 'D'];
     if (!groupList.contains(group)) {
       throw ArgumentError(
           "Error: this group had't been add to the NewsDrawerItemEntity class!!");
     }
   }
 }
+
+final groupList = ['A', 'B', 'C', 'D'];
 
 final List<NewsDrawerItemEntity> newsDrawerAllItem = [
   NewsDrawerItemEntity(

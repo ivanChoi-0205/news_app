@@ -34,6 +34,10 @@ class VibrationService {
   void clickFeedback() {
     if (_userEnableVibration) {
       HapticFeedback.selectionClick();
+      // Vibration.vibrate(
+      //   duration: 5,
+      //   amplitude: 1,
+      // );
     }
   }
 
@@ -58,5 +62,4 @@ class VibrationService {
   // Vibration would work even device system disable
 
   // TODO: user set vibration enable or not => setVibration()
-
 }
