@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../../../../constants/global_key.dart';
 import '../../../../service/vibration_service.dart';
-import '../widget/news_drawer.dart';
 import 'widget/news_custom_scroll_view_app_bar.dart';
 import 'widget/news_custom_scroll_view_listview.dart';
 import 'widget/news_custom_scroll_view_search_bar.dart';
@@ -40,44 +40,47 @@ class _NewsLayoutState extends State<NewsLayout> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey.shade200,
-      // drawerEnableOpenDragGesture: false,
-      drawer: const NewsDrawer(),
-      body: CustomScrollView(
-        controller: _controller,
-        // physics:,
-        // keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-        slivers: [
-          NewsCustomScrollViewAppBar(
-            leadingWidget: Builder(
-              builder: (context) {
-                return GestureDetector(
-                  onTap: () {
-                    VibrationService().clickFeedback();
-                    Scaffold.of(context).openDrawer();
-                  },
-                  child: const Icon(
-                    Icons.menu_rounded,
-                    color: Colors.black,
-                  ),
-                );
-              },
+    return GestureDetector(
+      onTap: () {
+        VibrationService().clickFeedback();
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        body: CustomScrollView(
+          controller: _controller,
+          // physics:,
+          // keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+          slivers: [
+            NewsCustomScrollViewAppBar(
+              leadingWidget: Builder(
+                builder: (context) {
+                  return GestureDetector(
+                    onTap: () {
+                      VibrationService().clickFeedback();
+                      rootScaffoldKey.currentState!.openDrawer();
+                    },
+                    child: const Icon(
+                      Icons.menu_rounded,
+                      color: Colors.black,
+                    ),
+                  );
+                },
+              ),
             ),
-          ),
-          const SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
-            sliver: NewsCustomScrollViewWelcome(),
-          ),
-          const SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-            sliver: NewsCustomScrollViewSearchBar(),
-          ),
-          const SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            sliver: NewsCustomScrollViewListView(),
-          ),
-        ],
+            const SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+              sliver: NewsCustomScrollViewWelcome(),
+            ),
+            const SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              sliver: NewsCustomScrollViewSearchBar(),
+            ),
+            const SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              sliver: NewsCustomScrollViewListView(),
+            ),
+          ],
+        ),
       ),
     );
   }

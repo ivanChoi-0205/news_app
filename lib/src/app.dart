@@ -3,12 +3,16 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'constants/enum.dart';
+import 'constants/global_key.dart';
+import 'constants/theme/dark_theme_data.dart';
+import 'constants/theme/light_theme_data.dart';
 import 'service/api/api.dart';
-import 'constants/src/enum.dart';
-import 'custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
-import 'states/layout_state/layout_notifier.dart';
-import 'states/layout_state/layout_states.dart';
+import 'states/layout_states/layout_notifier.dart';
+import 'states/layout_states/layout_states.dart';
 import 'util/layout_util.dart';
+import 'widget/custom_bottom_navigation_bar.dart';
+import 'widget/drawer/layout/drawer_layout.dart';
 
 class App extends ConsumerStatefulWidget {
   const App({super.key});
@@ -50,24 +54,32 @@ class _AppState extends ConsumerState<App> {
     log(apiUrl);
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        useMaterial3: true,
-        // colorScheme: ColorScheme(
-        //   brightness: Brightness.light,
-        //   background: Colors.grey.shade200,
-        //   error: Colors.red.shade400,
-        //   onBackground: Colors.white,
-        //   onError: Colors.red.shade200,
-        //   onPrimary: Colors.white,
-        //   onSecondary: Colors.white,
-        //   onSurface: Colors.white,
-        //   primary: Colors.white,
-        //   secondary: Colors.white,
-        //   surface: Colors.white,
-        // ),
-        primarySwatch: Colors.blue,
+      home: Layout(
+        controller: _controller,
       ),
-      home: Scaffold(
+    );
+  }
+}
+
+class Layout extends StatelessWidget {
+  const Layout({
+    super.key,
+    required PageController? controller,
+  }) : _controller = controller;
+
+  final PageController? _controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedTheme(
+      data: MediaQuery.of(context).platformBrightness == Brightness.dark
+          ? darkThemeData
+          : lightThemeData,
+      curve: Curves.easeIn,
+      duration: const Duration(milliseconds: 500),
+      child: Scaffold(
+        key: rootScaffoldKey,
+        drawer: const DrawerLayout(),
         extendBody:
             true, // extendBody for floating bar get better performance and remove bottom area
         body: Consumer(

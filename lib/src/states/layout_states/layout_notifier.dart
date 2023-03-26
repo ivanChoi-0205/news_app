@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../constants/src/enum.dart';
+import '../../constants/enum.dart';
 import 'layout_states.dart';
 
 // final StateProvider<LayoutType> currentLayoutProvider =

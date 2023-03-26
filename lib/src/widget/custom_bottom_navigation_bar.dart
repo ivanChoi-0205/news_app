@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_app/src/service/vibration_service.dart';
 
-import '../states/layout_state/layout_notifier.dart';
+import '../states/layout_states/layout_notifier.dart';
 import '../util/layout_util.dart';
 
 //! this nav bar would rebuild so many times during keyboard show up animation

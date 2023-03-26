@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/src/enum.dart';
+import '../constants/enum.dart';
 import '../feature/feature_main/blogger/layout/blogger_layout.dart';
 import '../feature/feature_main/news/layout/news_layout.dart';
 import '../feature/feature_main/podcasts/layout/podcasts_layout.dart';

@@ -5,5 +5,3 @@ enum LayoutType {
   blogger,
   podcasts,
 }
-
-// internet check 
