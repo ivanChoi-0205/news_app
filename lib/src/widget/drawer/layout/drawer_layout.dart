@@ -1,9 +1,8 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:news_app/src/widget/drawer/widget/drawer_footer.dart';
 
-import '../../../constants/global_key.dart';
-import '../../../service/vibration_service.dart';
 import '../constant/drawer_enum.dart';
 
 class DrawerLayout extends StatefulWidget {
@@ -36,9 +35,6 @@ class _DrawerLayoutState extends State<DrawerLayout> {
       child: Stack(
         children: [
           Column(
-            // physics: const ClampingScrollPhysics(),
-            // shrinkWrap: true,
-            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               DrawerHeader(
                 margin: EdgeInsets.zero,
@@ -73,7 +69,10 @@ class _DrawerLayoutState extends State<DrawerLayout> {
                     children: [
                       for (DrawerItemEnum value in DrawerItemEnum.values) ...[
                         _DrawerItem(item: value)
-                      ]
+                      ],
+                      for (DrawerItemEnum value in DrawerItemEnum.values) ...[
+                        _DrawerItem(item: value)
+                      ],
                     ],
                   ),
                 ),
@@ -84,22 +83,8 @@ class _DrawerLayoutState extends State<DrawerLayout> {
             Positioned(
               left: 0.0,
               right: 0.0,
-              bottom: MediaQuery.of(context).padding.bottom + 40,
-              child: ElevatedButton.icon(
-                onPressed: () {
-                  VibrationService().clickFeedback();
-                  rootScaffoldKey.currentState!.closeDrawer();
-                },
-                icon: DrawerItemEnum.logOut.getItemEntity()?.icon ??
-                    const SizedBox(),
-                label: Text(
-                  DrawerItemEnum.logOut.getItemEntity()?.label ?? '',
-                  style: const TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ),
+              bottom: MediaQuery.of(context).padding.bottom,
+              child: const DrawerFooter(),
             )
         ],
       ),
