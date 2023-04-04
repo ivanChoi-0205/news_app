@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'app_color.dart';
 
-void getGenerateTextStyle() => TextStyle(
+TextStyle getGenerateTextStyle() => TextStyle(
       color: AppColorConstants.textColor,
       fontSize: 18.0,
       height: 1.5,

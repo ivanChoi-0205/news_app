@@ -48,7 +48,7 @@ class _NewsLayoutState extends State<NewsLayout> {
       child: Scaffold(
         body: CustomScrollView(
           controller: _controller,
-          // physics:,
+          // physics: ,
           // keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           slivers: [
             NewsCustomScrollViewAppBar(
@@ -71,14 +71,12 @@ class _NewsLayoutState extends State<NewsLayout> {
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
               sliver: NewsCustomScrollViewWelcome(),
             ),
+            // const CupertinoSliverRefreshControl(),
             const SliverPadding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               sliver: NewsCustomScrollViewSearchBar(),
             ),
-            const SliverPadding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              sliver: NewsCustomScrollViewListView(),
-            ),
+            const NewsCustomScrollViewListView(),
           ],
         ),
       ),
