@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -7,7 +5,6 @@ import 'constants/enum.dart';
 import 'constants/global_key.dart';
 import 'constants/theme/dark_theme_data.dart';
 import 'constants/theme/light_theme_data.dart';
-import 'service/api/api.dart';
 import 'states/layout_states/layout_notifier.dart';
 import 'states/layout_states/layout_states.dart';
 import 'util/layout_util.dart';
@@ -51,7 +48,6 @@ class _AppState extends ConsumerState<App> {
 
   @override
   Widget build(BuildContext context) {
-    log(apiUrl);
     return MaterialApp(
       title: 'Flutter Demo',
       home: Layout(

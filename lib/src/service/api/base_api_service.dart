@@ -1,11 +1,9 @@
 import 'package:dio/dio.dart';
 
-import 'api.dart';
-
-class DioService {
-  static DioService? _instance;
-  factory DioService() => _instance ??= DioService._();
-  DioService._();
+class BaseApiService {
+  static BaseApiService? _instance;
+  factory BaseApiService() => _instance ??= BaseApiService._();
+  BaseApiService._();
 
   // Options options = Options(
   //   baseUrl: "https://www.xx.com/api",
@@ -16,16 +14,22 @@ class DioService {
 
   final _dio = Dio();
 
-  Future<dynamic>? get() async {
+  Future<dynamic>? get({
+    required String apiUrl,
+  }) async {
     // TODO: network checking
     // TODO: BaseResponse model
     // TODO: Response cache manager
     // TODO: retry and timeout
     // TODO: Logger
     // TODO: showLoading
-
+    // TODO: header
     try {
-      final Response<dynamic> response = await _dio.get(apiUrl);
+      final Response response = await _dio.get(
+        apiUrl,
+        // queryParameters:,
+        // options:,
+      );
       if (response.statusCode == 200) {
         return response.data;
       } else {
