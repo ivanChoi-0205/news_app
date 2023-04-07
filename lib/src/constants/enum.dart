@@ -1,7 +1,8 @@
 enum LayoutType {
   news,
   profile,
-  live,
+  // live,
+  video,
   blogger,
   podcasts,
 }
