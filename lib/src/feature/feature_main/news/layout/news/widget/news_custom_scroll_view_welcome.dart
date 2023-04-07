@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../widget/shake_widget.dart';
+import '../../../../../../widget/shake_widget.dart';
 
 class NewsCustomScrollViewWelcome extends StatelessWidget {
   const NewsCustomScrollViewWelcome({

@@ -11,24 +11,8 @@ class NewsCustomScrollViewAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      // flexibleSpace: Container(
-      // width: 20,
-      // height: 50,
-      // color: Colors.red.withOpacity(0.5),
-      // ),
-      // bottom: PreferredSize(
-      //   preferredSize: const Size(100, 50),
-      //   child: Container(
-      //     height: 50,
-      //     color: Colors.amber,
-      //   ),
-
-      // ),
       backgroundColor: Colors.white,
-      // expandedHeight: 100,
       pinned: true,
-      // floating: true,
-      // snap: true,
       centerTitle: true,
       leading: leadingWidget,
       title: const Text(

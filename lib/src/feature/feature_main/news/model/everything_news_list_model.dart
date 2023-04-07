@@ -7,11 +7,21 @@ part 'everything_news_list_model.g.dart';
 
 @freezed
 class EverythingNewsListModel with _$EverythingNewsListModel {
+  // Enable this line when custom variable exists (e.g hasArticles)
+  // const EverythingNewsListModel._();
   const factory EverythingNewsListModel({
     required String status,
     required int totalResults,
     List<EverythingNewsArticle>? articles,
   }) = _EverythingNewsListModel;
+
+  // bool hasArticles() {
+  //   final isNotEmptyArticles = (articles?.length ?? 0) > 0;
+  //   if (totalResults > 0 && isNotEmptyArticles) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
 
   factory EverythingNewsListModel.fromJson(Map<String, Object?> json) =>
       _$EverythingNewsListModelFromJson(json);

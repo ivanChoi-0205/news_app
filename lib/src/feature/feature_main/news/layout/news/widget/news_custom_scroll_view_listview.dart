@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_app/src/feature/feature_main/news/model/everything_news_list_model.dart';
 import 'package:news_app/src/feature/feature_main/news/service/news_service.dart';
 
-import '../../widget/news_listview_content.dart';
+import '../../../widget/news_listview_content.dart';
 
 class NewsCustomScrollViewListView extends StatelessWidget {
   const NewsCustomScrollViewListView({
