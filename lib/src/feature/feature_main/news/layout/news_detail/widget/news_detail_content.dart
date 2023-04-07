@@ -16,15 +16,6 @@ class NewsDetailContent extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Center(
-          child: Text(
-            '${article?.title}',
-            style: const TextStyle(
-              fontWeight: FontWeight.w800,
-              fontSize: 24.0,
-            ),
-          ),
-        ),
         if (article?.description != null) ...[
           const SizedBox(height: 12),
           Text(

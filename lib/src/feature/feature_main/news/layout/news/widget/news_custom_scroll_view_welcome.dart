@@ -15,6 +15,8 @@ class NewsCustomScrollViewWelcome extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
+            Text('天氣'),
+            Text('日期'),
             Text(
               'Hello',
               style: TextStyle(

@@ -17,6 +17,7 @@ class NewsDetailLayout extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           NewsDetailAppBar(
+            title: article?.title,
             backgroundImageUrl: article?.urlToImage,
           ),
           SliverToBoxAdapter(

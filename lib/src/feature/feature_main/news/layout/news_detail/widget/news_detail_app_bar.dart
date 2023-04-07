@@ -4,7 +4,10 @@ class NewsDetailAppBar extends StatelessWidget {
   const NewsDetailAppBar({
     Key? key,
     required this.backgroundImageUrl,
+    required this.title,
   }) : super(key: key);
+
+  final String? title;
   final String? backgroundImageUrl;
 
   @override
@@ -31,15 +34,41 @@ class NewsDetailAppBar extends StatelessWidget {
         ),
         const SizedBox(width: 12),
         _ActionsAvatar(
+          icon: Icons.bookmark_border_rounded,
+          onTap: () => Navigator.pop(context),
+        ),
+        const SizedBox(width: 12),
+        _ActionsAvatar(
           icon: Icons.more_vert_rounded,
           onTap: () => Navigator.pop(context),
         ),
         const SizedBox(width: 20),
       ],
       flexibleSpace: FlexibleSpaceBar(
-        background: Image.network(
-          backgroundImageUrl!,
-          fit: BoxFit.cover,
+        background: Stack(
+          children: [
+            Positioned.fill(
+              child: Image.network(
+                backgroundImageUrl!,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Positioned(
+              left: 20.0,
+              right: 20.0,
+              bottom: 20.0,
+              //TODO: add a fading
+              child: Text(
+                title ?? '',
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 20.0,
+                  height: 1.5,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
