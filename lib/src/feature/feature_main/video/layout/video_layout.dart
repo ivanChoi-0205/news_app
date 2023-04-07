@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LiveLayout extends StatelessWidget {
-  const LiveLayout({
+class VideoLayout extends StatelessWidget {
+  const VideoLayout({
     Key? key,
   }) : super(key: key);
 
@@ -9,7 +9,7 @@ class LiveLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: Text(
-        'LiveLayout',
+        'Video Layout',
       ),
     );
   }

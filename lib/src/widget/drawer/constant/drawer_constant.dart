@@ -6,6 +6,12 @@ import 'drawer_enum.dart';
 final groupList = ['A', 'B', 'C', 'D'];
 
 final Map<DrawerItemEnum, DrawerItemEntity> drawerAllItem = {
+  DrawerItemEnum.home: DrawerItemEntity(
+    label: 'Home',
+    icon: const Icon(Icons.home_rounded),
+    group: 'A',
+    // routePath: '/news',
+  ),
   DrawerItemEnum.profile: DrawerItemEntity(
     label: 'My Profile',
     icon: const Icon(Icons.person_2_rounded),

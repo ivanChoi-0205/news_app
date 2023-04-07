@@ -2,6 +2,7 @@ import '../model/drawer_model.dart';
 import 'drawer_constant.dart';
 
 enum DrawerItemEnum {
+  home,
   profile,
   post,
   bookmark,

@@ -4,6 +4,7 @@ import '../constants/enum.dart';
 import '../feature/feature_main/blogger/layout/blogger_layout.dart';
 import '../feature/feature_main/news/layout/news/news_layout.dart';
 import '../feature/feature_main/podcasts/layout/podcasts_layout.dart';
+import '../feature/feature_main/video/layout/video_layout.dart';
 
 final Map<LayoutType, LayoutItemEntity> layoutsEntity = {
   LayoutType.podcasts: LayoutItemEntity(
@@ -11,11 +12,11 @@ final Map<LayoutType, LayoutItemEntity> layoutsEntity = {
     navBarLabel: '播客',
     layoutWidget: const PodcastsLayout(),
   ),
-  // LayoutType.live: LayoutItemEntity(
-  //   navBarIcon: const Icon(Icons.live_tv_rounded),
-  //   navBarLabel: '直播',
-  //   layoutWidget: const LiveLayout(),
-  // ),
+  LayoutType.video: LayoutItemEntity(
+    navBarIcon: const Icon(Icons.video_collection_rounded),
+    navBarLabel: '影片',
+    layoutWidget: const VideoLayout(),
+  ),
   LayoutType.news: LayoutItemEntity(
     navBarIcon: const Icon(Icons.newspaper_rounded),
     navBarLabel: '主頁',
