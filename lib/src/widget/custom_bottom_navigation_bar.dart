@@ -45,10 +45,6 @@ class CustomBottomNavigationBar extends ConsumerWidget {
           final LayoutNotifier notifier = ref.read(layoutProvider.notifier);
           final newLayoutType = getLayoutTypeEnumByIndex(index);
           notifier.onLayoutTypeChanged(newLayoutType);
-
-          // final service = DioService();
-          // final data = await service.get();
-          // log(data.toString());
         },
         items: List.generate(
           layoutTypeCount,

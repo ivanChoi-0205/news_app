@@ -36,8 +36,9 @@ class NewsCustomScrollViewListView extends StatelessWidget {
             ),
           ),
           // const SliverFillViewport(delegate: SliverChildDelegate()),
-          error: (error, stackTrace) =>
-              const SliverToBoxAdapter(child: SizedBox()),
+          error: (error, stackTrace) => const SliverToBoxAdapter(
+            child: SizedBox(),
+          ),
         );
       },
     );

@@ -13,6 +13,8 @@ class NewsDetailLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // log(Theme.of(context).scaffoldBackgroundColor.toString());
+    //TODO: Find out why Theme.of(context).scaffoldBackgroundColor always got Color(0xFFFAFAFA)
     return Scaffold(
       body: CustomScrollView(
         slivers: [

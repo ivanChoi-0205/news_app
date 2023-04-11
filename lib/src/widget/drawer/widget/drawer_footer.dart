@@ -21,32 +21,17 @@ class DrawerFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        children: [
-          Container(
-            height: 52.0,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: Colors.blue,
-              borderRadius: generateButtonRadius,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                if (logOutItemEntity?.icon != null) ...[
-                  logOutItemEntity!.icon,
-                  const SizedBox(width: 20),
-                ],
-                Text(logOutItemEntity?.label ?? ''),
-              ],
-            ),
-          ),
-          const SizedBox(height: 18),
-          GestureDetector(
-            onTap: () => onCancelButtonClicked(),
-            child: Container(
+    return Container(
+      color: Theme.of(context).scaffoldBackgroundColor,
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: 20,
+          right: 20,
+          bottom: MediaQuery.of(context).padding.bottom,
+        ),
+        child: Column(
+          children: [
+            Container(
               height: 52.0,
               width: double.infinity,
               decoration: BoxDecoration(
@@ -55,15 +40,37 @@ class DrawerFooter extends StatelessWidget {
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(Icons.cancel_rounded),
-                  SizedBox(width: 20),
-                  Text('Back to home'),
+                children: [
+                  if (logOutItemEntity?.icon != null) ...[
+                    logOutItemEntity!.icon,
+                    const SizedBox(width: 20),
+                  ],
+                  Text(logOutItemEntity?.label ?? ''),
                 ],
               ),
             ),
-          ),
-        ],
+            const SizedBox(height: 18),
+            GestureDetector(
+              onTap: () => onCancelButtonClicked(),
+              child: Container(
+                height: 52.0,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: generateButtonRadius,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Icon(Icons.cancel_rounded),
+                    SizedBox(width: 20),
+                    Text('Back to home'),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

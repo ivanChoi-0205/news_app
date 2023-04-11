@@ -1,9 +1,10 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:news_app/src/widget/drawer/widget/drawer_footer.dart';
+import 'package:news_app/src/widget/fading_edge.dart';
 
 import '../constant/drawer_enum.dart';
+import '../widget/drawer_footer.dart';
 
 class DrawerLayout extends StatefulWidget {
   const DrawerLayout({
@@ -31,39 +32,44 @@ class _DrawerLayoutState extends State<DrawerLayout> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      // backgroundColor: Colors.amber,
-      child: Stack(
-        children: [
-          Column(
-            children: [
-              DrawerHeader(
-                margin: EdgeInsets.zero,
-                padding: EdgeInsets.zero,
-                decoration: const BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      CircleAvatar(
-                        child: Icon(
-                          Icons.person,
-                        ),
-                      ),
-                      SizedBox(height: 20),
-                      Text(
-                        'Ivan Choi',
-                        style: TextStyle(
-                          fontSize: 24.0,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(40),
+      ),
+      child: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              flex: 1,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  CircleAvatar(
+                    child: Icon(
+                      Icons.person,
+                    ),
                   ),
-                ),
+                  SizedBox(height: 20),
+                  Text(
+                    'Ivan Choi',
+                    style: TextStyle(
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
               ),
-              Expanded(
+            ),
+            Expanded(
+              flex: 3,
+              child: FadingEdge(
+                edgeSide: EdgeSide(
+                  top: 24.0,
+                  bottom: 16.0,
+                ),
+                colors: [
+                  Theme.of(context).scaffoldBackgroundColor,
+                  Theme.of(context).scaffoldBackgroundColor.withOpacity(0),
+                ],
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
@@ -77,16 +83,11 @@ class _DrawerLayoutState extends State<DrawerLayout> {
                   ),
                 ),
               ),
-            ],
-          ),
-          if (DrawerItemEnum.logOut.getItemEntity() != null)
-            Positioned(
-              left: 0.0,
-              right: 0.0,
-              bottom: MediaQuery.of(context).padding.bottom,
-              child: const DrawerFooter(),
-            )
-        ],
+            ),
+            if (DrawerItemEnum.logOut.getItemEntity() != null)
+              const DrawerFooter(),
+          ],
+        ),
       ),
     );
   }

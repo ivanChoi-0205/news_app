@@ -47,10 +47,30 @@ class NewsDetailAppBar extends StatelessWidget {
       flexibleSpace: FlexibleSpaceBar(
         background: Stack(
           children: [
+            // Positioned.fill(
+            //   child: Image.network(
+            //     backgroundImageUrl!,
+            //     fit: BoxFit.cover,
+            //   ),
+            // ),
             Positioned.fill(
-              child: Image.network(
-                backgroundImageUrl!,
-                fit: BoxFit.cover,
+              child: ShaderMask(
+                blendMode: BlendMode.dstIn,
+                shaderCallback: (Rect bounds) {
+                  return LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      // Colors.white,
+                      Theme.of(context).scaffoldBackgroundColor,
+                      Colors.transparent,
+                    ],
+                  ).createShader(bounds);
+                },
+                child: Image.network(
+                  backgroundImageUrl!,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             Positioned(
@@ -61,7 +81,7 @@ class NewsDetailAppBar extends StatelessWidget {
               child: Text(
                 title ?? '',
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.w500,
                   fontSize: 20.0,
                   height: 1.5,

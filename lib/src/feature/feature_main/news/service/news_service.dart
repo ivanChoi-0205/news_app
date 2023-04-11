@@ -27,19 +27,19 @@ class NewsService {
       return data;
     } catch (e) {
       log(e.toString());
-
       return null;
     }
   }
 }
 
-final Provider newsServiceProvider = Provider<NewsService>((ref) {
-  return NewsService();
-});
+final Provider newsServiceProvider = Provider<NewsService>(
+  (ref) {
+    return NewsService();
+  },
+);
 
-final newsEverythingListFutureProvider =
-    FutureProvider(<EverythingNewsListModel>(ref) {
-  return ref.read(newsServiceProvider).fetchEverythingNewsList();
-});
-
-// riverpod for service
+final newsEverythingListFutureProvider = FutureProvider(
+  <EverythingNewsListModel>(ref) {
+    return ref.read(newsServiceProvider).fetchEverythingNewsList();
+  },
+);

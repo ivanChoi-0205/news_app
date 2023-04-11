@@ -14,17 +14,17 @@ class NewsCustomScrollViewWelcome extends StatelessWidget {
         key: UniqueKey(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            Text('天氣'),
-            Text('日期'),
-            Text(
+          children: [
+            const Text('天氣'),
+            Text(DateTime.now().toString()),
+            const Text(
               'Hello',
               style: TextStyle(
                 fontSize: 36,
                 fontWeight: FontWeight.w600,
               ),
             ),
-            Text(
+            const Text(
               'Ivan Choi',
               style: TextStyle(
                 fontSize: 32,
