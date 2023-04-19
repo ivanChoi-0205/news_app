@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../constants/app_dimen.dart';
+import '../../../../../../constant/app_dimen.dart';
 import '../../../model/everything_news_list_model.dart';
 
 class NewsDetailContent extends StatelessWidget {

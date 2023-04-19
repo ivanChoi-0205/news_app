@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import '../../constants/enum.dart';
+import '../../constant/enum.dart';
 
 class LayoutStates extends Equatable {
   final LayoutType layoutType;

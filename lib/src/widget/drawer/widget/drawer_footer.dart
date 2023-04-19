@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:news_app/src/widget/drawer/constant/drawer_enum.dart';
 import 'package:news_app/src/widget/drawer/model/drawer_model.dart';
 
-import '../../../constants/app_dimen.dart';
-import '../../../constants/global_key.dart';
+import '../../../constant/app_dimen.dart';
+import '../../../constant/global_key.dart';
 import '../../../service/vibration_service.dart';
 
 class DrawerFooter extends StatelessWidget {
