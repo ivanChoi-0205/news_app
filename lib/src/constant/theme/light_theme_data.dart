@@ -2,19 +2,22 @@ import 'package:flutter/material.dart';
 import 'light_text_theme.dart';
 
 final ThemeData lightThemeData = ThemeData(
-  // useMaterial3: true,
+  useMaterial3: true,
+  colorSchemeSeed: Colors.amber,
   // the above setting use in both light theme and dark theme
-  scaffoldBackgroundColor: Colors.grey.shade100,
+  // scaffoldBackgroundColor: Colors.grey.shade100,
+  scaffoldBackgroundColor: const Color(0xFFFAFAFA),
+  // scaffoldBackgroundColor: Colors.amber,
   brightness: Brightness.light,
   textTheme: lightTextTheme,
-  primarySwatch: Colors.blue,
+  // primarySwatch: Colors.blue,
   drawerTheme: const DrawerThemeData(
     backgroundColor: Colors.white,
     shape: RoundedRectangleBorder(
       side: BorderSide(width: 1.0, color: Colors.black),
-      borderRadius: BorderRadius.all(
-        Radius.circular(40),
-      ),
+      // borderRadius: BorderRadius.all(
+      //   Radius.circular(40),
+      // ),
     ),
   ),
   // colorScheme: ColorScheme(

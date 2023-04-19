@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/src/constants/theme/light_theme_data.dart';
+import 'package:news_app/src/constant/theme/light_theme_data.dart';
 
 final ThemeData darkThemeData = lightThemeData.copyWith(
   brightness: Brightness.dark,
