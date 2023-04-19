@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -16,8 +17,14 @@ void main() {
   ]);
 
   runApp(
-    const ProviderScope(
-      child: App(),
+    DevicePreview(
+      // enabled: !kReleaseMode,
+      enabled: false,
+      builder: (BuildContext context) {
+        return const ProviderScope(
+          child: App(),
+        );
+      },
     ),
   );
 }
