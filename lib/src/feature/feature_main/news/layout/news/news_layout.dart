@@ -6,8 +6,6 @@ import '../../../../../constant/global_key.dart';
 import '../../../../../service/vibration_service.dart';
 import 'widget/news_custom_scroll_view_app_bar.dart';
 import 'widget/news_custom_scroll_view_listview.dart';
-import 'widget/news_custom_scroll_view_search_bar.dart';
-import 'widget/news_custom_scroll_view_welcome.dart';
 
 class NewsLayout extends StatefulWidget {
   const NewsLayout({
@@ -42,7 +40,7 @@ class _NewsLayoutState extends State<NewsLayout> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        VibrationService().clickFeedback();
+        clickFeedback();
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
@@ -54,7 +52,7 @@ class _NewsLayoutState extends State<NewsLayout> {
                 builder: (context) {
                   return GestureDetector(
                     onTap: () {
-                      VibrationService().clickFeedback();
+                      clickFeedback();
                       rootScaffoldKey.currentState!.openDrawer();
                     },
                     child: const Icon(
@@ -65,15 +63,16 @@ class _NewsLayoutState extends State<NewsLayout> {
                 },
               ),
             ),
-            const SliverPadding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
-              sliver: NewsCustomScrollViewWelcome(),
-            ),
+            // const SliverPadding(
+            //   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+            //   sliver: NewsCustomScrollViewWelcome(),
+            // ),
+            // const NewsCustomScrollViewGridView(),
             // const CupertinoSliverRefreshControl(),
-            const SliverPadding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              sliver: NewsCustomScrollViewSearchBar(),
-            ),
+            // const SliverPadding(
+            //   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            //   sliver: NewsCustomScrollViewSearchBar(),
+            // ),
             const NewsCustomScrollViewListView(),
           ],
         ),

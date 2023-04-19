@@ -17,6 +17,7 @@ class NewsService {
     log('fetchEverythingNewsList');
     try {
       final String url = getEverythingNewsApiUrl();
+      // final String url = getTopHeadlinesNewsApiUrl();
 
       final jsonData = await apiService.get(
         apiUrl: url,

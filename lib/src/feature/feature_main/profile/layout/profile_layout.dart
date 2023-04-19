@@ -33,9 +33,7 @@ class ProfileLayout extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                // VibrationService().slideFeedback();
-                VibrationService().clickFeedback();
-
+                clickFeedback();
                 log('Background');
               },
               child: Container(

@@ -12,7 +12,7 @@ class DrawerFooter extends StatelessWidget {
   }) : super(key: key);
 
   void onCancelButtonClicked() {
-    VibrationService().clickFeedback();
+    clickFeedback();
     rootScaffoldKey.currentState!.closeDrawer();
   }
 

@@ -72,14 +72,11 @@ class _DrawerLayoutState extends State<DrawerLayout> {
                 ],
                 child: SingleChildScrollView(
                   child: Column(
-                    children: [
-                      for (DrawerItemEnum value in DrawerItemEnum.values) ...[
-                        _DrawerItem(item: value)
-                      ],
-                      for (DrawerItemEnum value in DrawerItemEnum.values) ...[
-                        _DrawerItem(item: value)
-                      ],
-                    ],
+                    children: List.generate(
+                        DrawerItemEnum.values.length,
+                        (index) => _DrawerItem(
+                              item: DrawerItemEnum.values[index],
+                            )),
                   ),
                 ),
               ),

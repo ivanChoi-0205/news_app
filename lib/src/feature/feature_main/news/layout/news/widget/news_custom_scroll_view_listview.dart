@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:news_app/src/feature/feature_main/news/model/everything_news_list_model.dart';
 import 'package:news_app/src/feature/feature_main/news/service/news_service.dart';
 
@@ -23,8 +24,10 @@ class NewsCustomScrollViewListView extends StatelessWidget {
         final data = ref.watch(newsEverythingListFutureProvider);
         return data.when(
           data: (data) {
-            return NewsListViewContent(
-              articles: (data as EverythingNewsListModel).articles,
+            return AnimationLimiter(
+              child: NewsListViewContent(
+                articles: (data as EverythingNewsListModel).articles,
+              ),
             );
           },
           loading: () => const SliverFillRemaining(

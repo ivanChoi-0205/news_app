@@ -14,6 +14,9 @@ class VibrationService {
   late final bool _hasAmplitudeControl;
   late final bool _hasCustomVibrationsSupport;
 
+  bool get userEnableVibration => _userEnableVibration;
+  bool get hasCustomVibrator => _hasCustomVibrator;
+
   Future<void> init() async {
     // TODO: read value from shared_preferences package
     _userEnableVibration = true;
@@ -31,35 +34,37 @@ class VibrationService {
     _hasCustomVibrator = _hasVibrator && _hasCustomVibrationsSupport;
   }
 
-  void clickFeedback() {
-    if (_userEnableVibration) {
-      HapticFeedback.selectionClick();
-      // Vibration.vibrate(
-      //   duration: 5,
-      //   amplitude: 1,
-      // );
-    }
-  }
-
-  void slideFeedback() {
-    if (_userEnableVibration) {
-      HapticFeedback.lightImpact();
-    }
-  }
-
-  void errorFeedback() {
-    if (_userEnableVibration && _hasCustomVibrator) {
-      Vibration.vibrate(duration: 500);
-    }
-  }
-
-  void successFeedback() {
-    if (_userEnableVibration && _hasCustomVibrator) {
-      Vibration.vibrate(duration: 50);
-    }
-  }
-
   // Vibration would work even device system disable
 
   // TODO: user set vibration enable or not => setVibration()
+}
+
+void clickFeedback() {
+  if (VibrationService().userEnableVibration) {
+    HapticFeedback.selectionClick();
+    // Vibration.vibrate(
+    //   duration: 5,
+    //   amplitude: 1,
+    // );
+  }
+}
+
+void slideFeedback() {
+  if (VibrationService().userEnableVibration) {
+    HapticFeedback.lightImpact();
+  }
+}
+
+void errorFeedback() {
+  if (VibrationService().userEnableVibration &&
+      VibrationService().hasCustomVibrator) {
+    Vibration.vibrate(duration: 500);
+  }
+}
+
+void successFeedback() {
+  if (VibrationService().userEnableVibration &&
+      VibrationService().hasCustomVibrator) {
+    Vibration.vibrate(duration: 50);
+  }
 }
