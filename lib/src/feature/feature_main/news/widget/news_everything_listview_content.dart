@@ -3,31 +3,16 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import '../../../../constant/app_dimen.dart';
 import '../../../../widget/inkwell_widget.dart';
-import '../layout/news_detail/news_detail_layout.dart';
-import '../model/everything_news_list_model.dart';
+import '../model/news_response_model.dart';
+import '../util/news_util.dart';
 
-class NewsListViewContent extends StatelessWidget {
-  const NewsListViewContent({
+class NewsEverythingContent extends StatelessWidget {
+  const NewsEverythingContent({
     Key? key,
     this.articles,
   }) : super(key: key);
 
-  final List<EverythingNewsArticle>? articles;
-
-  void routeToNewsDetailPage({
-    required BuildContext context,
-    required EverythingNewsArticle? article,
-  }) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => NewsDetailLayout(
-          article: article,
-        ),
-        // builder: (context) => const ScrollingParallaxEffect(),
-      ),
-    );
-  }
+  final List<NewsArticle>? articles;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +20,7 @@ class NewsListViewContent extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
         childCount: articles?.length ?? 0,
         (context, index) {
-          final EverythingNewsArticle? article = articles?[index];
+          final NewsArticle? article = articles?[index];
 
           //TODO: change to card widget
           return AnimationConfiguration.staggeredList(

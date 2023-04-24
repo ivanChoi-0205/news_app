@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'everything_news_list_model.dart';
+part of 'news_response_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,39 +14,35 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-EverythingNewsListModel _$EverythingNewsListModelFromJson(
-    Map<String, dynamic> json) {
-  return _EverythingNewsListModel.fromJson(json);
+NewsResponseModel _$NewsResponseModelFromJson(Map<String, dynamic> json) {
+  return _NewsResponseModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$EverythingNewsListModel {
+mixin _$NewsResponseModel {
   String get status => throw _privateConstructorUsedError;
   int get totalResults => throw _privateConstructorUsedError;
-  List<EverythingNewsArticle>? get articles =>
-      throw _privateConstructorUsedError;
+  List<NewsArticle>? get articles => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $EverythingNewsListModelCopyWith<EverythingNewsListModel> get copyWith =>
+  $NewsResponseModelCopyWith<NewsResponseModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $EverythingNewsListModelCopyWith<$Res> {
-  factory $EverythingNewsListModelCopyWith(EverythingNewsListModel value,
-          $Res Function(EverythingNewsListModel) then) =
-      _$EverythingNewsListModelCopyWithImpl<$Res, EverythingNewsListModel>;
+abstract class $NewsResponseModelCopyWith<$Res> {
+  factory $NewsResponseModelCopyWith(
+          NewsResponseModel value, $Res Function(NewsResponseModel) then) =
+      _$NewsResponseModelCopyWithImpl<$Res, NewsResponseModel>;
   @useResult
-  $Res call(
-      {String status, int totalResults, List<EverythingNewsArticle>? articles});
+  $Res call({String status, int totalResults, List<NewsArticle>? articles});
 }
 
 /// @nodoc
-class _$EverythingNewsListModelCopyWithImpl<$Res,
-        $Val extends EverythingNewsListModel>
-    implements $EverythingNewsListModelCopyWith<$Res> {
-  _$EverythingNewsListModelCopyWithImpl(this._value, this._then);
+class _$NewsResponseModelCopyWithImpl<$Res, $Val extends NewsResponseModel>
+    implements $NewsResponseModelCopyWith<$Res> {
+  _$NewsResponseModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -72,30 +68,28 @@ class _$EverythingNewsListModelCopyWithImpl<$Res,
       articles: freezed == articles
           ? _value.articles
           : articles // ignore: cast_nullable_to_non_nullable
-              as List<EverythingNewsArticle>?,
+              as List<NewsArticle>?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_EverythingNewsListModelCopyWith<$Res>
-    implements $EverythingNewsListModelCopyWith<$Res> {
-  factory _$$_EverythingNewsListModelCopyWith(_$_EverythingNewsListModel value,
-          $Res Function(_$_EverythingNewsListModel) then) =
-      __$$_EverythingNewsListModelCopyWithImpl<$Res>;
+abstract class _$$_NewsResponseModelCopyWith<$Res>
+    implements $NewsResponseModelCopyWith<$Res> {
+  factory _$$_NewsResponseModelCopyWith(_$_NewsResponseModel value,
+          $Res Function(_$_NewsResponseModel) then) =
+      __$$_NewsResponseModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String status, int totalResults, List<EverythingNewsArticle>? articles});
+  $Res call({String status, int totalResults, List<NewsArticle>? articles});
 }
 
 /// @nodoc
-class __$$_EverythingNewsListModelCopyWithImpl<$Res>
-    extends _$EverythingNewsListModelCopyWithImpl<$Res,
-        _$_EverythingNewsListModel>
-    implements _$$_EverythingNewsListModelCopyWith<$Res> {
-  __$$_EverythingNewsListModelCopyWithImpl(_$_EverythingNewsListModel _value,
-      $Res Function(_$_EverythingNewsListModel) _then)
+class __$$_NewsResponseModelCopyWithImpl<$Res>
+    extends _$NewsResponseModelCopyWithImpl<$Res, _$_NewsResponseModel>
+    implements _$$_NewsResponseModelCopyWith<$Res> {
+  __$$_NewsResponseModelCopyWithImpl(
+      _$_NewsResponseModel _value, $Res Function(_$_NewsResponseModel) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -105,7 +99,7 @@ class __$$_EverythingNewsListModelCopyWithImpl<$Res>
     Object? totalResults = null,
     Object? articles = freezed,
   }) {
-    return _then(_$_EverythingNewsListModel(
+    return _then(_$_NewsResponseModel(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -117,30 +111,30 @@ class __$$_EverythingNewsListModelCopyWithImpl<$Res>
       articles: freezed == articles
           ? _value._articles
           : articles // ignore: cast_nullable_to_non_nullable
-              as List<EverythingNewsArticle>?,
+              as List<NewsArticle>?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_EverythingNewsListModel implements _EverythingNewsListModel {
-  const _$_EverythingNewsListModel(
+class _$_NewsResponseModel implements _NewsResponseModel {
+  const _$_NewsResponseModel(
       {required this.status,
       required this.totalResults,
-      final List<EverythingNewsArticle>? articles})
+      final List<NewsArticle>? articles})
       : _articles = articles;
 
-  factory _$_EverythingNewsListModel.fromJson(Map<String, dynamic> json) =>
-      _$$_EverythingNewsListModelFromJson(json);
+  factory _$_NewsResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$$_NewsResponseModelFromJson(json);
 
   @override
   final String status;
   @override
   final int totalResults;
-  final List<EverythingNewsArticle>? _articles;
+  final List<NewsArticle>? _articles;
   @override
-  List<EverythingNewsArticle>? get articles {
+  List<NewsArticle>? get articles {
     final value = _articles;
     if (value == null) return null;
     if (_articles is EqualUnmodifiableListView) return _articles;
@@ -150,14 +144,14 @@ class _$_EverythingNewsListModel implements _EverythingNewsListModel {
 
   @override
   String toString() {
-    return 'EverythingNewsListModel(status: $status, totalResults: $totalResults, articles: $articles)';
+    return 'NewsResponseModel(status: $status, totalResults: $totalResults, articles: $articles)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EverythingNewsListModel &&
+            other is _$_NewsResponseModel &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.totalResults, totalResults) ||
                 other.totalResults == totalResults) &&
@@ -172,49 +166,46 @@ class _$_EverythingNewsListModel implements _EverythingNewsListModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EverythingNewsListModelCopyWith<_$_EverythingNewsListModel>
-      get copyWith =>
-          __$$_EverythingNewsListModelCopyWithImpl<_$_EverythingNewsListModel>(
-              this, _$identity);
+  _$$_NewsResponseModelCopyWith<_$_NewsResponseModel> get copyWith =>
+      __$$_NewsResponseModelCopyWithImpl<_$_NewsResponseModel>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EverythingNewsListModelToJson(
+    return _$$_NewsResponseModelToJson(
       this,
     );
   }
 }
 
-abstract class _EverythingNewsListModel implements EverythingNewsListModel {
-  const factory _EverythingNewsListModel(
-          {required final String status,
-          required final int totalResults,
-          final List<EverythingNewsArticle>? articles}) =
-      _$_EverythingNewsListModel;
+abstract class _NewsResponseModel implements NewsResponseModel {
+  const factory _NewsResponseModel(
+      {required final String status,
+      required final int totalResults,
+      final List<NewsArticle>? articles}) = _$_NewsResponseModel;
 
-  factory _EverythingNewsListModel.fromJson(Map<String, dynamic> json) =
-      _$_EverythingNewsListModel.fromJson;
+  factory _NewsResponseModel.fromJson(Map<String, dynamic> json) =
+      _$_NewsResponseModel.fromJson;
 
   @override
   String get status;
   @override
   int get totalResults;
   @override
-  List<EverythingNewsArticle>? get articles;
+  List<NewsArticle>? get articles;
   @override
   @JsonKey(ignore: true)
-  _$$_EverythingNewsListModelCopyWith<_$_EverythingNewsListModel>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$_NewsResponseModelCopyWith<_$_NewsResponseModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-EverythingNewsArticle _$EverythingNewsArticleFromJson(
-    Map<String, dynamic> json) {
-  return _EverythingNewsArticle.fromJson(json);
+NewsArticle _$NewsArticleFromJson(Map<String, dynamic> json) {
+  return _NewsArticle.fromJson(json);
 }
 
 /// @nodoc
-mixin _$EverythingNewsArticle {
-  EverythingNewsSource? get source => throw _privateConstructorUsedError;
+mixin _$NewsArticle {
+  NewsSource? get source => throw _privateConstructorUsedError;
   String? get author => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
@@ -225,18 +216,18 @@ mixin _$EverythingNewsArticle {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $EverythingNewsArticleCopyWith<EverythingNewsArticle> get copyWith =>
+  $NewsArticleCopyWith<NewsArticle> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $EverythingNewsArticleCopyWith<$Res> {
-  factory $EverythingNewsArticleCopyWith(EverythingNewsArticle value,
-          $Res Function(EverythingNewsArticle) then) =
-      _$EverythingNewsArticleCopyWithImpl<$Res, EverythingNewsArticle>;
+abstract class $NewsArticleCopyWith<$Res> {
+  factory $NewsArticleCopyWith(
+          NewsArticle value, $Res Function(NewsArticle) then) =
+      _$NewsArticleCopyWithImpl<$Res, NewsArticle>;
   @useResult
   $Res call(
-      {EverythingNewsSource? source,
+      {NewsSource? source,
       String? author,
       String? title,
       String? description,
@@ -245,14 +236,13 @@ abstract class $EverythingNewsArticleCopyWith<$Res> {
       String? publishedAt,
       String? content});
 
-  $EverythingNewsSourceCopyWith<$Res>? get source;
+  $NewsSourceCopyWith<$Res>? get source;
 }
 
 /// @nodoc
-class _$EverythingNewsArticleCopyWithImpl<$Res,
-        $Val extends EverythingNewsArticle>
-    implements $EverythingNewsArticleCopyWith<$Res> {
-  _$EverythingNewsArticleCopyWithImpl(this._value, this._then);
+class _$NewsArticleCopyWithImpl<$Res, $Val extends NewsArticle>
+    implements $NewsArticleCopyWith<$Res> {
+  _$NewsArticleCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -275,7 +265,7 @@ class _$EverythingNewsArticleCopyWithImpl<$Res,
       source: freezed == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
-              as EverythingNewsSource?,
+              as NewsSource?,
       author: freezed == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
@@ -309,27 +299,27 @@ class _$EverythingNewsArticleCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $EverythingNewsSourceCopyWith<$Res>? get source {
+  $NewsSourceCopyWith<$Res>? get source {
     if (_value.source == null) {
       return null;
     }
 
-    return $EverythingNewsSourceCopyWith<$Res>(_value.source!, (value) {
+    return $NewsSourceCopyWith<$Res>(_value.source!, (value) {
       return _then(_value.copyWith(source: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$_EverythingNewsArticleCopyWith<$Res>
-    implements $EverythingNewsArticleCopyWith<$Res> {
-  factory _$$_EverythingNewsArticleCopyWith(_$_EverythingNewsArticle value,
-          $Res Function(_$_EverythingNewsArticle) then) =
-      __$$_EverythingNewsArticleCopyWithImpl<$Res>;
+abstract class _$$_NewsArticleCopyWith<$Res>
+    implements $NewsArticleCopyWith<$Res> {
+  factory _$$_NewsArticleCopyWith(
+          _$_NewsArticle value, $Res Function(_$_NewsArticle) then) =
+      __$$_NewsArticleCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {EverythingNewsSource? source,
+      {NewsSource? source,
       String? author,
       String? title,
       String? description,
@@ -339,15 +329,15 @@ abstract class _$$_EverythingNewsArticleCopyWith<$Res>
       String? content});
 
   @override
-  $EverythingNewsSourceCopyWith<$Res>? get source;
+  $NewsSourceCopyWith<$Res>? get source;
 }
 
 /// @nodoc
-class __$$_EverythingNewsArticleCopyWithImpl<$Res>
-    extends _$EverythingNewsArticleCopyWithImpl<$Res, _$_EverythingNewsArticle>
-    implements _$$_EverythingNewsArticleCopyWith<$Res> {
-  __$$_EverythingNewsArticleCopyWithImpl(_$_EverythingNewsArticle _value,
-      $Res Function(_$_EverythingNewsArticle) _then)
+class __$$_NewsArticleCopyWithImpl<$Res>
+    extends _$NewsArticleCopyWithImpl<$Res, _$_NewsArticle>
+    implements _$$_NewsArticleCopyWith<$Res> {
+  __$$_NewsArticleCopyWithImpl(
+      _$_NewsArticle _value, $Res Function(_$_NewsArticle) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -362,11 +352,11 @@ class __$$_EverythingNewsArticleCopyWithImpl<$Res>
     Object? publishedAt = freezed,
     Object? content = freezed,
   }) {
-    return _then(_$_EverythingNewsArticle(
+    return _then(_$_NewsArticle(
       source: freezed == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
-              as EverythingNewsSource?,
+              as NewsSource?,
       author: freezed == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
@@ -401,8 +391,8 @@ class __$$_EverythingNewsArticleCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_EverythingNewsArticle implements _EverythingNewsArticle {
-  const _$_EverythingNewsArticle(
+class _$_NewsArticle implements _NewsArticle {
+  const _$_NewsArticle(
       {this.source,
       this.author,
       this.title,
@@ -412,11 +402,11 @@ class _$_EverythingNewsArticle implements _EverythingNewsArticle {
       this.publishedAt,
       this.content});
 
-  factory _$_EverythingNewsArticle.fromJson(Map<String, dynamic> json) =>
-      _$$_EverythingNewsArticleFromJson(json);
+  factory _$_NewsArticle.fromJson(Map<String, dynamic> json) =>
+      _$$_NewsArticleFromJson(json);
 
   @override
-  final EverythingNewsSource? source;
+  final NewsSource? source;
   @override
   final String? author;
   @override
@@ -434,14 +424,14 @@ class _$_EverythingNewsArticle implements _EverythingNewsArticle {
 
   @override
   String toString() {
-    return 'EverythingNewsArticle(source: $source, author: $author, title: $title, description: $description, url: $url, urlToImage: $urlToImage, publishedAt: $publishedAt, content: $content)';
+    return 'NewsArticle(source: $source, author: $author, title: $title, description: $description, url: $url, urlToImage: $urlToImage, publishedAt: $publishedAt, content: $content)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EverythingNewsArticle &&
+            other is _$_NewsArticle &&
             (identical(other.source, source) || other.source == source) &&
             (identical(other.author, author) || other.author == author) &&
             (identical(other.title, title) || other.title == title) &&
@@ -463,34 +453,33 @@ class _$_EverythingNewsArticle implements _EverythingNewsArticle {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EverythingNewsArticleCopyWith<_$_EverythingNewsArticle> get copyWith =>
-      __$$_EverythingNewsArticleCopyWithImpl<_$_EverythingNewsArticle>(
-          this, _$identity);
+  _$$_NewsArticleCopyWith<_$_NewsArticle> get copyWith =>
+      __$$_NewsArticleCopyWithImpl<_$_NewsArticle>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EverythingNewsArticleToJson(
+    return _$$_NewsArticleToJson(
       this,
     );
   }
 }
 
-abstract class _EverythingNewsArticle implements EverythingNewsArticle {
-  const factory _EverythingNewsArticle(
-      {final EverythingNewsSource? source,
+abstract class _NewsArticle implements NewsArticle {
+  const factory _NewsArticle(
+      {final NewsSource? source,
       final String? author,
       final String? title,
       final String? description,
       final String? url,
       final String? urlToImage,
       final String? publishedAt,
-      final String? content}) = _$_EverythingNewsArticle;
+      final String? content}) = _$_NewsArticle;
 
-  factory _EverythingNewsArticle.fromJson(Map<String, dynamic> json) =
-      _$_EverythingNewsArticle.fromJson;
+  factory _NewsArticle.fromJson(Map<String, dynamic> json) =
+      _$_NewsArticle.fromJson;
 
   @override
-  EverythingNewsSource? get source;
+  NewsSource? get source;
   @override
   String? get author;
   @override
@@ -507,39 +496,38 @@ abstract class _EverythingNewsArticle implements EverythingNewsArticle {
   String? get content;
   @override
   @JsonKey(ignore: true)
-  _$$_EverythingNewsArticleCopyWith<_$_EverythingNewsArticle> get copyWith =>
+  _$$_NewsArticleCopyWith<_$_NewsArticle> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-EverythingNewsSource _$EverythingNewsSourceFromJson(Map<String, dynamic> json) {
-  return _EverythingNewsSource.fromJson(json);
+NewsSource _$NewsSourceFromJson(Map<String, dynamic> json) {
+  return _NewsSource.fromJson(json);
 }
 
 /// @nodoc
-mixin _$EverythingNewsSource {
+mixin _$NewsSource {
   String? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $EverythingNewsSourceCopyWith<EverythingNewsSource> get copyWith =>
+  $NewsSourceCopyWith<NewsSource> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $EverythingNewsSourceCopyWith<$Res> {
-  factory $EverythingNewsSourceCopyWith(EverythingNewsSource value,
-          $Res Function(EverythingNewsSource) then) =
-      _$EverythingNewsSourceCopyWithImpl<$Res, EverythingNewsSource>;
+abstract class $NewsSourceCopyWith<$Res> {
+  factory $NewsSourceCopyWith(
+          NewsSource value, $Res Function(NewsSource) then) =
+      _$NewsSourceCopyWithImpl<$Res, NewsSource>;
   @useResult
   $Res call({String? id, String? name});
 }
 
 /// @nodoc
-class _$EverythingNewsSourceCopyWithImpl<$Res,
-        $Val extends EverythingNewsSource>
-    implements $EverythingNewsSourceCopyWith<$Res> {
-  _$EverythingNewsSourceCopyWithImpl(this._value, this._then);
+class _$NewsSourceCopyWithImpl<$Res, $Val extends NewsSource>
+    implements $NewsSourceCopyWith<$Res> {
+  _$NewsSourceCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -566,22 +554,22 @@ class _$EverythingNewsSourceCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_EverythingNewsSourceCopyWith<$Res>
-    implements $EverythingNewsSourceCopyWith<$Res> {
-  factory _$$_EverythingNewsSourceCopyWith(_$_EverythingNewsSource value,
-          $Res Function(_$_EverythingNewsSource) then) =
-      __$$_EverythingNewsSourceCopyWithImpl<$Res>;
+abstract class _$$_NewsSourceCopyWith<$Res>
+    implements $NewsSourceCopyWith<$Res> {
+  factory _$$_NewsSourceCopyWith(
+          _$_NewsSource value, $Res Function(_$_NewsSource) then) =
+      __$$_NewsSourceCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? id, String? name});
 }
 
 /// @nodoc
-class __$$_EverythingNewsSourceCopyWithImpl<$Res>
-    extends _$EverythingNewsSourceCopyWithImpl<$Res, _$_EverythingNewsSource>
-    implements _$$_EverythingNewsSourceCopyWith<$Res> {
-  __$$_EverythingNewsSourceCopyWithImpl(_$_EverythingNewsSource _value,
-      $Res Function(_$_EverythingNewsSource) _then)
+class __$$_NewsSourceCopyWithImpl<$Res>
+    extends _$NewsSourceCopyWithImpl<$Res, _$_NewsSource>
+    implements _$$_NewsSourceCopyWith<$Res> {
+  __$$_NewsSourceCopyWithImpl(
+      _$_NewsSource _value, $Res Function(_$_NewsSource) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -590,7 +578,7 @@ class __$$_EverythingNewsSourceCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
   }) {
-    return _then(_$_EverythingNewsSource(
+    return _then(_$_NewsSource(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -605,11 +593,11 @@ class __$$_EverythingNewsSourceCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_EverythingNewsSource implements _EverythingNewsSource {
-  const _$_EverythingNewsSource({this.id, this.name});
+class _$_NewsSource implements _NewsSource {
+  const _$_NewsSource({this.id, this.name});
 
-  factory _$_EverythingNewsSource.fromJson(Map<String, dynamic> json) =>
-      _$$_EverythingNewsSourceFromJson(json);
+  factory _$_NewsSource.fromJson(Map<String, dynamic> json) =>
+      _$$_NewsSourceFromJson(json);
 
   @override
   final String? id;
@@ -618,14 +606,14 @@ class _$_EverythingNewsSource implements _EverythingNewsSource {
 
   @override
   String toString() {
-    return 'EverythingNewsSource(id: $id, name: $name)';
+    return 'NewsSource(id: $id, name: $name)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EverythingNewsSource &&
+            other is _$_NewsSource &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name));
   }
@@ -637,24 +625,23 @@ class _$_EverythingNewsSource implements _EverythingNewsSource {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EverythingNewsSourceCopyWith<_$_EverythingNewsSource> get copyWith =>
-      __$$_EverythingNewsSourceCopyWithImpl<_$_EverythingNewsSource>(
-          this, _$identity);
+  _$$_NewsSourceCopyWith<_$_NewsSource> get copyWith =>
+      __$$_NewsSourceCopyWithImpl<_$_NewsSource>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EverythingNewsSourceToJson(
+    return _$$_NewsSourceToJson(
       this,
     );
   }
 }
 
-abstract class _EverythingNewsSource implements EverythingNewsSource {
-  const factory _EverythingNewsSource({final String? id, final String? name}) =
-      _$_EverythingNewsSource;
+abstract class _NewsSource implements NewsSource {
+  const factory _NewsSource({final String? id, final String? name}) =
+      _$_NewsSource;
 
-  factory _EverythingNewsSource.fromJson(Map<String, dynamic> json) =
-      _$_EverythingNewsSource.fromJson;
+  factory _NewsSource.fromJson(Map<String, dynamic> json) =
+      _$_NewsSource.fromJson;
 
   @override
   String? get id;
@@ -662,6 +649,6 @@ abstract class _EverythingNewsSource implements EverythingNewsSource {
   String? get name;
   @override
   @JsonKey(ignore: true)
-  _$$_EverythingNewsSourceCopyWith<_$_EverythingNewsSource> get copyWith =>
+  _$$_NewsSourceCopyWith<_$_NewsSource> get copyWith =>
       throw _privateConstructorUsedError;
 }

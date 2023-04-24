@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../../constant/app_dimen.dart';
-import '../../../model/everything_news_list_model.dart';
+import '../../../model/news_response_model.dart';
 
 class NewsDetailContent extends StatelessWidget {
   const NewsDetailContent({
@@ -9,7 +9,7 @@ class NewsDetailContent extends StatelessWidget {
     required this.article,
   }) : super(key: key);
 
-  final EverythingNewsArticle? article;
+  final NewsArticle? article;
 
   @override
   Widget build(BuildContext context) {

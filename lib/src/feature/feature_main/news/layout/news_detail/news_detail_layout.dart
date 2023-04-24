@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-import '../../model/everything_news_list_model.dart';
+import '../../model/news_response_model.dart';
 import 'widget/news_detail_app_bar.dart';
 import 'widget/news_detail_content.dart';
 
@@ -10,7 +10,7 @@ class NewsDetailLayout extends StatefulWidget {
     Key? key,
     required this.article,
   }) : super(key: key);
-  final EverythingNewsArticle? article;
+  final NewsArticle? article;
 
   @override
   State<NewsDetailLayout> createState() => _NewsDetailLayoutState();

@@ -1,37 +1,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'everything_news_list_model.dart';
+part of 'news_response_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_EverythingNewsListModel _$$_EverythingNewsListModelFromJson(
-        Map<String, dynamic> json) =>
-    _$_EverythingNewsListModel(
+_$_NewsResponseModel _$$_NewsResponseModelFromJson(Map<String, dynamic> json) =>
+    _$_NewsResponseModel(
       status: json['status'] as String,
       totalResults: json['totalResults'] as int,
       articles: (json['articles'] as List<dynamic>?)
-          ?.map(
-              (e) => EverythingNewsArticle.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => NewsArticle.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$_EverythingNewsListModelToJson(
-        _$_EverythingNewsListModel instance) =>
+Map<String, dynamic> _$$_NewsResponseModelToJson(
+        _$_NewsResponseModel instance) =>
     <String, dynamic>{
       'status': instance.status,
       'totalResults': instance.totalResults,
       'articles': instance.articles,
     };
 
-_$_EverythingNewsArticle _$$_EverythingNewsArticleFromJson(
-        Map<String, dynamic> json) =>
-    _$_EverythingNewsArticle(
+_$_NewsArticle _$$_NewsArticleFromJson(Map<String, dynamic> json) =>
+    _$_NewsArticle(
       source: json['source'] == null
           ? null
-          : EverythingNewsSource.fromJson(
-              json['source'] as Map<String, dynamic>),
+          : NewsSource.fromJson(json['source'] as Map<String, dynamic>),
       author: json['author'] as String?,
       title: json['title'] as String?,
       description: json['description'] as String?,
@@ -41,8 +37,7 @@ _$_EverythingNewsArticle _$$_EverythingNewsArticleFromJson(
       content: json['content'] as String?,
     );
 
-Map<String, dynamic> _$$_EverythingNewsArticleToJson(
-        _$_EverythingNewsArticle instance) =>
+Map<String, dynamic> _$$_NewsArticleToJson(_$_NewsArticle instance) =>
     <String, dynamic>{
       'source': instance.source,
       'author': instance.author,
@@ -54,15 +49,13 @@ Map<String, dynamic> _$$_EverythingNewsArticleToJson(
       'content': instance.content,
     };
 
-_$_EverythingNewsSource _$$_EverythingNewsSourceFromJson(
-        Map<String, dynamic> json) =>
-    _$_EverythingNewsSource(
+_$_NewsSource _$$_NewsSourceFromJson(Map<String, dynamic> json) =>
+    _$_NewsSource(
       id: json['id'] as String?,
       name: json['name'] as String?,
     );
 
-Map<String, dynamic> _$$_EverythingNewsSourceToJson(
-        _$_EverythingNewsSource instance) =>
+Map<String, dynamic> _$$_NewsSourceToJson(_$_NewsSource instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

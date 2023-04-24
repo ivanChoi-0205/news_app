@@ -1,11 +1,11 @@
 // fless
 
 import 'package:flutter/material.dart';
+import 'package:news_app/src/feature/feature_main/news/layout/news/widget/news_top_headlines_listview.dart';
 
-import '../../../../../constant/global_key.dart';
 import '../../../../../service/vibration_service.dart';
-import 'widget/news_custom_scroll_view_app_bar.dart';
-import 'widget/news_custom_scroll_view_listview.dart';
+import 'widget/news_custom_scroll_view_app_bar_delegate.dart';
+import 'widget/news_everything_listview.dart';
 
 class NewsLayout extends StatefulWidget {
   const NewsLayout({
@@ -38,6 +38,8 @@ class _NewsLayoutState extends State<NewsLayout> {
 
   @override
   Widget build(BuildContext context) {
+    final EdgeInsets padding = MediaQuery.of(context).padding;
+
     return GestureDetector(
       onTap: () {
         clickFeedback();
@@ -47,33 +49,26 @@ class _NewsLayoutState extends State<NewsLayout> {
         body: CustomScrollView(
           controller: _controller,
           slivers: [
-            NewsCustomScrollViewAppBar(
-              leadingWidget: Builder(
-                builder: (context) {
-                  return GestureDetector(
-                    onTap: () {
-                      clickFeedback();
-                      rootScaffoldKey.currentState!.openDrawer();
-                    },
-                    child: const Icon(
-                      Icons.menu_rounded,
-                      color: Colors.black,
-                    ),
-                  );
-                },
+            SliverPadding(
+              padding: const EdgeInsets.only(bottom: 28),
+              sliver: SliverPersistentHeader(
+                pinned: true,
+                delegate: NewsCustomScrollViewAppBarDelegate(
+                  paddingTop: padding.top,
+                ),
               ),
             ),
-            // const SliverPadding(
-            //   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
-            //   sliver: NewsCustomScrollViewWelcome(),
-            // ),
-            // const NewsCustomScrollViewGridView(),
-            // const CupertinoSliverRefreshControl(),
-            // const SliverPadding(
-            //   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-            //   sliver: NewsCustomScrollViewSearchBar(),
-            // ),
-            const NewsCustomScrollViewListView(),
+            const SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.only(left: 20.0, bottom: 12.0),
+                child: Text('頭條新聞'),
+              ),
+            ),
+            const SliverPadding(
+              padding: EdgeInsets.only(bottom: 28),
+              sliver: NewsTopHeadlinesListView(),
+            ),
+            const NewsEverythingListView(),
           ],
         ),
       ),

@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_app/src/feature/feature_main/news/util/news_api.dart';
 
 import '../../../../service/api/base_api_service.dart';
-import '../model/everything_news_list_model.dart';
+import '../model/news_response_model.dart';
 
 class NewsService {
   static NewsService? _instance;
@@ -13,7 +13,7 @@ class NewsService {
 
   final BaseApiService apiService = BaseApiService();
 
-  Future<EverythingNewsListModel?> fetchEverythingNewsList() async {
+  Future<NewsResponseModel?> fetchEverythingNewsList() async {
     log('fetchEverythingNewsList');
     try {
       final String url = getEverythingNewsApiUrl();
@@ -23,7 +23,25 @@ class NewsService {
         apiUrl: url,
       );
 
-      final data = EverythingNewsListModel.fromJson(jsonData);
+      final data = NewsResponseModel.fromJson(jsonData);
+
+      return data;
+    } catch (e) {
+      log(e.toString());
+      return null;
+    }
+  }
+
+  Future<NewsResponseModel?> fetchTopHeadlinesNewsList() async {
+    log('fetchEverythingNewsList');
+    try {
+      final String url = getTopHeadlinesNewsApiUrl();
+
+      final jsonData = await apiService.get(
+        apiUrl: url,
+      );
+
+      final data = NewsResponseModel.fromJson(jsonData);
 
       return data;
     } catch (e) {
@@ -42,5 +60,11 @@ final Provider newsServiceProvider = Provider<NewsService>(
 final newsEverythingListFutureProvider = FutureProvider(
   <EverythingNewsListModel>(ref) {
     return ref.read(newsServiceProvider).fetchEverythingNewsList();
+  },
+);
+
+final newsTopHeadlinesFutureProvider = FutureProvider(
+  <EverythingNewsListModel>(ref) {
+    return ref.read(newsServiceProvider).fetchTopHeadlinesNewsList();
   },
 );
