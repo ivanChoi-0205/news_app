@@ -20,6 +20,13 @@ final ThemeData lightThemeData = ThemeData(
       // ),
     ),
   ),
+  cardTheme: CardTheme(
+    elevation: 2,
+    margin: EdgeInsets.zero,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(14.0),
+    ),
+  ),
   // colorScheme: ColorScheme(
   //   brightness: Brightness.light,
   //   background: Colors.grey.shade200,

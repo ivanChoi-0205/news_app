@@ -1,0 +1,3 @@
+class LottieAssets {
+  LottieAssets._();
+}

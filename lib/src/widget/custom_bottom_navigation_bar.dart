@@ -39,8 +39,8 @@ class CustomBottomNavigationBar extends ConsumerWidget {
         backgroundColor: Colors.grey.shade200,
         borderRadius: const Radius.circular(20.0),
         isFloating: true,
-        onTap: (index) async {
-          VibrationService().clickFeedback();
+        onTap: (index) {
+          clickFeedback();
 
           final LayoutNotifier notifier = ref.read(layoutProvider.notifier);
           final newLayoutType = getLayoutTypeEnumByIndex(index);
