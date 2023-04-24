@@ -9,14 +9,12 @@ class NewsCustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: TextFormField(
-        decoration: const InputDecoration(
-          labelText: 'labelText',
-          hintText: 'hintText',
-        ),
-        initialValue: 'type some thing',
+    return TextFormField(
+      decoration: const InputDecoration(
+        labelText: 'labelText',
+        hintText: 'hintText',
       ),
+      initialValue: 'type some thing',
     );
   }
 }
