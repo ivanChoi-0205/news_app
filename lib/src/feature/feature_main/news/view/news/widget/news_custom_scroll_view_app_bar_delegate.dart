@@ -2,7 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
-import '../../../widget/news_app_bar_background.dart';
+import 'news_app_bar_background.dart';
 import '../../../widget/news_app_bar_leading.dart';
 import '../constant/dimens.dart';
 

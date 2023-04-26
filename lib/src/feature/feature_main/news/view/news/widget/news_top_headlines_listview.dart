@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_app/src/feature/feature_main/news/service/news_service.dart';
 
 import '../../../model/news_response_model.dart';
-import '../../../widget/news_top_headlines_listview_content.dart';
+import 'news_top_headlines_listview_content.dart';
 
 class NewsTopHeadlinesListView extends ConsumerWidget {
   const NewsTopHeadlinesListView({

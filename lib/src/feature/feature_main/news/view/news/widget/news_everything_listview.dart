@@ -4,7 +4,7 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import '../../../model/news_response_model.dart';
 import '../../../service/news_service.dart';
-import '../../../widget/news_everything_listview_content.dart';
+import 'news_everything_listview_content.dart';
 
 class NewsEverythingListView extends ConsumerWidget {
   const NewsEverythingListView({

@@ -1,13 +1,11 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:news_app/src/constant/app_dimen.dart';
 import 'package:news_app/src/widget/fading_edge.dart';
 
-import '../../../../widget/inkwell_widget.dart';
-import '../model/news_response_model.dart';
-import '../util/news_util.dart';
+import '../../../../../../widget/inkwell_widget.dart';
+import '../../../model/news_response_model.dart';
+import '../../../util/news_util.dart';
 
 class NewsTopHeadlinesContent extends StatelessWidget {
   const NewsTopHeadlinesContent({
@@ -19,7 +17,7 @@ class NewsTopHeadlinesContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final numOfArticles = articles?.length ?? 0;
-    log(articles!.first.toString());
+
     return SliverToBoxAdapter(
       child: AnimationLimiter(
         child: FadingEdge(

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
-import '../../../../constant/app_dimen.dart';
-import '../../../../widget/inkwell_widget.dart';
-import '../model/news_response_model.dart';
-import '../util/news_util.dart';
+import '../../../../../../constant/app_dimen.dart';
+import '../../../../../../widget/inkwell_widget.dart';
+import '../../../model/news_response_model.dart';
+import '../../../util/news_util.dart';
 
 class NewsEverythingContent extends StatelessWidget {
   const NewsEverythingContent({

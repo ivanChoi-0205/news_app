@@ -30,7 +30,13 @@ class NewsAppBarLeading extends StatelessWidget {
           const Spacer(),
           const CircleAvatar(
             child: Icon(
-              Icons.notifications,
+              Icons.search_rounded,
+            ),
+          ),
+          const SizedBox(width: 20),
+          const CircleAvatar(
+            child: Icon(
+              Icons.notifications_rounded,
             ),
           ),
           const SizedBox(width: 20),
