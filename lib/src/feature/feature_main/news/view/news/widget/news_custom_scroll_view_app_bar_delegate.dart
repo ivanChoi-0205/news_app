@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import '../../../widget/news_app_bar_background.dart';
 import '../../../widget/news_app_bar_leading.dart';
-import '../../../widget/news_search_bar.dart';
 import '../constant/dimens.dart';
 
 class NewsCustomScrollViewAppBarDelegate
@@ -41,8 +40,9 @@ class NewsCustomScrollViewAppBarDelegate
                 NewsAppBarLeading(
                   scrollRatio: scrollRatio,
                 ),
-                NewsSearchBar(
-                  scrollRatio: scrollRatio,
+                Opacity(
+                  opacity: 1 - scrollRatio,
+                  child: const Text('Content'),
                 ),
               ],
             ),

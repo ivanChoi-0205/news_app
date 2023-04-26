@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constant/enum.dart';
 import '../feature/feature_main/blogger/layout/blogger_layout.dart';
-import '../feature/feature_main/news/layout/news/news_layout.dart';
+import '../feature/feature_main/news/view/news/view/news_view.dart';
 import '../feature/feature_main/podcasts/layout/podcasts_layout.dart';
 import '../feature/feature_main/video/layout/video_layout.dart';
 

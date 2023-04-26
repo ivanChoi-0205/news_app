@@ -1,11 +1,11 @@
 // fless
 
 import 'package:flutter/material.dart';
-import 'package:news_app/src/feature/feature_main/news/layout/news/widget/news_top_headlines_listview.dart';
+import 'package:news_app/src/feature/feature_main/news/view/news/widget/news_top_headlines_listview.dart';
 
-import '../../../../../service/vibration_service.dart';
-import 'widget/news_custom_scroll_view_app_bar_delegate.dart';
-import 'widget/news_everything_listview.dart';
+import '../../../../../../service/vibration_service.dart';
+import '../widget/news_custom_scroll_view_app_bar_delegate.dart';
+import '../widget/news_everything_listview.dart';
 
 class NewsLayout extends StatefulWidget {
   const NewsLayout({

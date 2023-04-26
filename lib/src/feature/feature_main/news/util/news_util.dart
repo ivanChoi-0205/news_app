@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../layout/news_detail/news_detail_layout.dart';
 import '../model/news_response_model.dart';
+import '../view/news_detail/news_detail_layout.dart';
 
 void routeToNewsDetailPage({
   required BuildContext context,
