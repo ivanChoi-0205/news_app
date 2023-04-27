@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/src/extension/build_context_extension.dart';
 
 class NewsAppBarBackground extends StatelessWidget {
   const NewsAppBarBackground({
@@ -16,8 +17,12 @@ class NewsAppBarBackground extends StatelessWidget {
         scrollRatio: scrollRatio,
       ),
       child: Container(
-        decoration: const BoxDecoration(
-          color: Colors.amber,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: context.customThemeColors.appBarBackground,
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
         ),
       ),
     );

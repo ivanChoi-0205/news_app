@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
+import 'app_theme.dart';
 import 'light_text_theme.dart';
 
 final ThemeData lightThemeData = ThemeData(
   useMaterial3: true,
-  colorSchemeSeed: Colors.amber,
-  // the above setting use in both light theme and dark theme
+  // colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+  // colorSchemeSeed: Colors.amber,
+
   // scaffoldBackgroundColor: Colors.grey.shade100,
   scaffoldBackgroundColor: const Color(0xFFFAFAFA),
   // scaffoldBackgroundColor: Colors.amber,
   brightness: Brightness.light,
   textTheme: lightTextTheme,
-  // primarySwatch: Colors.blue,
+  appBarTheme: const AppBarTheme(),
   drawerTheme: const DrawerThemeData(
     backgroundColor: Colors.white,
     shape: RoundedRectangleBorder(
       side: BorderSide(width: 1.0, color: Colors.black),
-      // borderRadius: BorderRadius.all(
-      //   Radius.circular(40),
-      // ),
     ),
   ),
   cardTheme: CardTheme(
@@ -27,6 +26,14 @@ final ThemeData lightThemeData = ThemeData(
       borderRadius: BorderRadius.circular(14.0),
     ),
   ),
+  extensions: const [
+    AppTheme(
+      appBarBackground: [
+        Colors.blue,
+        Colors.lightBlueAccent,
+      ],
+    ),
+  ],
   // colorScheme: ColorScheme(
   //   brightness: Brightness.light,
   //   background: Colors.grey.shade200,
