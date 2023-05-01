@@ -16,7 +16,9 @@ class FadingEdge extends StatelessWidget {
   List<double>? stops;
   GradientTransform? transform;
 
-  List<Color> _getColors() {
+  List<Color> _getColors(BuildContext context) {
+    final defaultColor = Theme.of(context).scaffoldBackgroundColor;
+
     // using input colors
     if (colors != null) {
       if (stops?.length == null) {
@@ -32,16 +34,16 @@ class FadingEdge extends StatelessWidget {
     if (colors == null) {
       if (edgeSide.isTopOnly || edgeSide.isLeftOnly) {
         colors = [
-          Colors.white,
-          Colors.white.withOpacity(0.0),
+          defaultColor,
+          defaultColor.withOpacity(0.0),
         ];
         colors = colors!.reversed.toList();
       }
 
       if (edgeSide.isLeftOnly || edgeSide.isBottomOnly) {
         colors = [
-          Colors.white.withOpacity(0.0),
-          Colors.white,
+          defaultColor.withOpacity(0.0),
+          defaultColor,
         ];
         colors = colors!.reversed.toList();
       }
@@ -53,8 +55,8 @@ class FadingEdge extends StatelessWidget {
       }
     }
     return [
-      Colors.white,
-      Colors.white.withOpacity(0.0),
+      defaultColor,
+      defaultColor.withOpacity(0.0),
     ];
   }
 
@@ -77,7 +79,7 @@ class FadingEdge extends StatelessWidget {
                   end: Alignment.bottomCenter,
                   stops: stops,
                   transform: transform,
-                  colors: _getColors(),
+                  colors: _getColors(context),
                 ),
               ),
             ),
@@ -95,7 +97,7 @@ class FadingEdge extends StatelessWidget {
                   end: Alignment.topCenter,
                   stops: stops,
                   transform: transform,
-                  colors: _getColors(),
+                  colors: _getColors(context),
                 ),
               ),
             ),
@@ -113,7 +115,7 @@ class FadingEdge extends StatelessWidget {
                   end: Alignment.centerRight,
                   stops: stops,
                   transform: transform,
-                  colors: _getColors(),
+                  colors: _getColors(context),
                 ),
               ),
             ),
@@ -131,7 +133,7 @@ class FadingEdge extends StatelessWidget {
                   end: Alignment.centerLeft,
                   stops: stops,
                   transform: transform,
-                  colors: _getColors(),
+                  colors: _getColors(context),
                 ),
               ),
             ),
