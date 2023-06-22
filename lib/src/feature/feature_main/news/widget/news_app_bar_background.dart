@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/src/extension/build_context_extension.dart';
 
 class NewsAppBarBackground extends StatelessWidget {
   const NewsAppBarBackground({
@@ -11,21 +10,45 @@ class NewsAppBarBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipPath(
-      clipper: _BackgroundClipper(
-        bottomShapeHeight: 35,
-        scrollRatio: scrollRatio,
-      ),
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: context.customThemeColors.appBarBackground,
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
+    // const radius = Radius.circular(40.0);
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        Container(
+          color: Theme.of(context).colorScheme.primary,
         ),
-      ),
+        // Positioned(
+        //   left: 0,
+        //   right: 0,
+        //   bottom: 0,
+        //   child: Container(
+        //     height: 20,
+        //     decoration: BoxDecoration(
+        //       color: Theme.of(context).scaffoldBackgroundColor,
+        //       borderRadius: const BorderRadius.only(
+        //         topLeft: radius,
+        //         topRight: radius,
+        //       ),
+        //     ),
+        //   ),
+        // ),
+      ],
     );
+    // return ClipPath(
+    //   clipper: _BackgroundClipper(
+    //     bottomShapeHeight: 35,
+    //     scrollRatio: scrollRatio,
+    //   ),
+    //   child: Container(
+    //     decoration: BoxDecoration(
+    //       gradient: LinearGradient(
+    //         colors: context.customThemeColors.appBarBackground,
+    //         begin: Alignment.topLeft,
+    //         end: Alignment.bottomRight,
+    //       ),
+    //     ),
+    //   ),
+    // );
   }
 }
 

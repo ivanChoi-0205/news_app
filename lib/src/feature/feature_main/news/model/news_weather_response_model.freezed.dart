@@ -1280,8 +1280,8 @@ class __$$_ConditionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Condition implements _Condition {
-  const _$_Condition({this.text, this.icon, this.code});
+class _$_Condition extends _Condition {
+  const _$_Condition({this.text, this.icon, this.code}) : super._();
 
   factory _$_Condition.fromJson(Map<String, dynamic> json) =>
       _$$_ConditionFromJson(json);
@@ -1326,9 +1326,10 @@ class _$_Condition implements _Condition {
   }
 }
 
-abstract class _Condition implements Condition {
+abstract class _Condition extends Condition {
   const factory _Condition(
       {final String? text, final String? icon, final int? code}) = _$_Condition;
+  const _Condition._() : super._();
 
   factory _Condition.fromJson(Map<String, dynamic> json) =
       _$_Condition.fromJson;

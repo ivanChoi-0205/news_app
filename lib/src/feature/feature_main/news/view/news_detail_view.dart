@@ -1,23 +1,22 @@
-
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-import '../../model/news_response_model.dart';
-import 'widget/news_detail_app_bar.dart';
-import 'widget/news_detail_content.dart';
+import '../model/news_response_model.dart';
+import '../widget/news_detail_app_bar.dart';
+import '../widget/news_detail_content.dart';
 
-class NewsDetailLayout extends StatefulWidget {
-  const NewsDetailLayout({
+class NewsDetailView extends StatefulWidget {
+  const NewsDetailView({
     Key? key,
     required this.article,
   }) : super(key: key);
   final NewsArticle? article;
 
   @override
-  State<NewsDetailLayout> createState() => _NewsDetailLayoutState();
+  State<NewsDetailView> createState() => _NewsDetailViewState();
 }
 
-class _NewsDetailLayoutState extends State<NewsDetailLayout> {
+class _NewsDetailViewState extends State<NewsDetailView> {
   WebViewController controller = WebViewController();
 
   @override

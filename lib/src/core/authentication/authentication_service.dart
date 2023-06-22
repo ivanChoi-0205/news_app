@@ -35,3 +35,20 @@ class GoogleAuthenticationMethod implements AuthenticationRepository {
 abstract class AuthenticationRepository {
   Future<bool> login();
 }
+
+// class Authentication extends AuthenticationRepository with GoogleAuth {
+//   @override
+//   Future<bool> login() async {
+//     isAutoLoggin // may read value from super class
+//     switch (method) {
+//       case GoogleAuth:
+//         googleLogin();
+//         break;
+//     }
+//     return true;
+//   }
+// }
+
+// mixin GoogleAuth {
+//   void googleLogin() {}
+// }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 @immutable
 class AppTheme extends ThemeExtension<AppTheme> {
+  // ImageAssets._();
+
   const AppTheme({
     required this.appBarBackground,
   });

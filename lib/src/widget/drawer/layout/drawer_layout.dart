@@ -38,11 +38,11 @@ class _DrawerLayoutState extends State<DrawerLayout> {
       child: SafeArea(
         child: Column(
           children: [
-            Expanded(
+            const Expanded(
               flex: 1,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   CircleAvatar(
                     child: Icon(
                       Icons.person,

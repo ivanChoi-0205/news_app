@@ -25,9 +25,6 @@ class _AppState extends ConsumerState<App> {
   }
 
   _init() {
-    // final LayoutStates layoutState = ref.read(layoutProvider.notifier).state;
-    // final LayoutNotifier notifier = ref.read(layoutProvider.notifier);
-
     final LayoutStates layoutState = ref.read(layoutProvider);
     final LayoutType layoutType = layoutState.layoutType;
 

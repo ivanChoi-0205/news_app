@@ -2,35 +2,35 @@ import 'package:flutter/material.dart';
 
 import '../constant/enum.dart';
 import '../feature/feature_main/blogger/layout/blogger_layout.dart';
-import '../feature/feature_main/news/view/news/view/news_view.dart';
-import '../feature/feature_main/podcasts/layout/podcasts_layout.dart';
+import '../feature/feature_main/news/view/news_view.dart';
+import '../feature/feature_main/podcasts/view/podcasts_view.dart';
 import '../feature/feature_main/video/layout/video_layout.dart';
 
 final Map<LayoutType, LayoutItemEntity> layoutsEntity = {
   LayoutType.podcasts: LayoutItemEntity(
     navBarIcon: const Icon(Icons.podcasts_rounded),
     navBarLabel: '播客',
-    layoutWidget: const PodcastsLayout(),
+    view: const PodcastsView(),
   ),
   LayoutType.video: LayoutItemEntity(
     navBarIcon: const Icon(Icons.video_collection_rounded),
     navBarLabel: '影片',
-    layoutWidget: const VideoLayout(),
+    view: const VideoLayout(),
   ),
   LayoutType.news: LayoutItemEntity(
     navBarIcon: const Icon(Icons.newspaper_rounded),
     navBarLabel: '主頁',
-    layoutWidget: const NewsLayout(),
+    view: const NewsView(),
   ),
   LayoutType.blogger: LayoutItemEntity(
     navBarIcon: const Icon(Icons.chat_rounded),
     navBarLabel: '網誌',
-    layoutWidget: const BloggerLayout(),
+    view: const BloggerLayout(),
   ),
   // LayoutType.profile: LayoutItemEntity(
   //   navBarIcon: const Icon(Icons.person_rounded),
   //   navBarLabel: '個人主頁',
-  //   layoutWidget: const ProfileLayout(),
+  //   view: const ProfileLayout(),
   // ),
 };
 
@@ -57,13 +57,13 @@ int getIndexByLayoutEnumName(LayoutType layoutType) {
 class LayoutItemEntity {
   final Widget navBarIcon;
   final String navBarLabel;
-  final Widget layoutWidget;
+  final Widget view;
   //route
   // bool isMainLayout
 
   LayoutItemEntity({
     required this.navBarIcon,
     required this.navBarLabel,
-    required this.layoutWidget,
+    required this.view,
   });
 }

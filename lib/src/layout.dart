@@ -7,7 +7,6 @@ import 'constant/theme/light_theme_data.dart';
 import 'states/layout_states/layout_notifier.dart';
 import 'states/layout_states/layout_states.dart';
 import 'util/layout_util.dart';
-import 'widget/custom_bottom_navigation_bar.dart';
 import 'widget/drawer/layout/drawer_layout.dart';
 
 class Layout extends StatelessWidget {
@@ -28,6 +27,7 @@ class Layout extends StatelessWidget {
       duration: const Duration(milliseconds: 500),
       child: Scaffold(
         key: rootScaffoldKey,
+        backgroundColor: Colors.transparent,
         drawer: const DrawerLayout(),
         extendBody:
             true, // extendBody for floating bar get better performance and remove bottom area
@@ -43,22 +43,18 @@ class Layout extends StatelessWidget {
                 curve: Curves.ease,
               );
             });
-            // final layoutStates = ref.watch(layoutProvider);
-            // final currentLayoutIndex = getIndexByLayoutEnumName(
-            //   layoutStates.layoutType,
-            // );
             return PageView(
               controller: _controller,
               physics: const NeverScrollableScrollPhysics(),
               children: List.generate(
                 layoutsEntity.length,
-                (index) => layoutsEntity.values.elementAt(index).layoutWidget,
+                (index) => layoutsEntity.values.elementAt(index).view,
               ),
             );
           },
         ),
         // bottomSheet: Container(height: 100, width: 100, color: Colors.red),
-        bottomNavigationBar: const CustomBottomNavigationBar(),
+        // bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }

@@ -67,25 +67,26 @@ class Current with _$Current {
 
 @freezed
 class Condition with _$Condition {
+  const Condition._(); // if add a custom function inside the class, have to define a single private constructor
   const factory Condition({
     String? text,
     String? icon,
     int? code,
   }) = _Condition;
 
-  // String? iconPath() {
-  //   if (icon == null) return null;
-  //   String path = icon ?? '';
+  String? iconPath(String? icon) {
+    if (icon == null) return null;
+    String path = icon;
 
-  //   while (true) {
-  //     if (path.startsWith('/')) {
-  //       path = icon!.replaceFirst('/', '');
-  //     } else {
-  //       break;
-  //     }
-  //   }
-  //   return path;
-  // }
+    while (true) {
+      if (path.startsWith('/')) {
+        path = icon.replaceFirst('/', '');
+      } else {
+        break;
+      }
+    }
+    return path;
+  }
 
   factory Condition.fromJson(Map<String, Object?> json) =>
       _$ConditionFromJson(json);

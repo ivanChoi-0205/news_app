@@ -1,22 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:news_app/src/feature/feature_main/news/service/news_service.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
-import '../../../model/news_response_model.dart';
-import 'news_top_headlines_listview_content.dart';
+import '../model/news_response_model.dart';
+import '../service/news_service.dart';
+import 'news_everything_listview_content.dart';
 
-class NewsTopHeadlinesListView extends ConsumerWidget {
-  const NewsTopHeadlinesListView({
+class NewsEverythingListView extends ConsumerWidget {
+  const NewsEverythingListView({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final data = ref.watch(newsTopHeadlinesFutureProvider);
+    //TODO: refactor for getting data from StateNotifierProvider(maybe)
+    final data = ref.watch(newsEverythingListFutureProvider);
+
     return data.when(
       data: (data) {
-        return NewsTopHeadlinesContent(
-          articles: (data as NewsResponseModel).articles,
+        return AnimationLimiter(
+          child: NewsEverythingContent(
+            articles: (data as NewsResponseModel).articles,
+          ),
         );
       },
       loading: () => const SliverFillRemaining(

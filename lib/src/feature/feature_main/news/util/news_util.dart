@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../model/news_response_model.dart';
-import '../view/news_detail/news_detail_layout.dart';
+import '../view/news_detail_view.dart';
 
 void routeToNewsDetailPage({
   required BuildContext context,
@@ -10,7 +10,7 @@ void routeToNewsDetailPage({
   Navigator.push(
     context,
     MaterialPageRoute(
-      builder: (context) => NewsDetailLayout(
+      builder: (context) => NewsDetailView(
         article: article,
       ),
       // builder: (context) => const ScrollingParallaxEffect(),

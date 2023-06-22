@@ -23,7 +23,6 @@ class WeatherService {
       final result = NewsWeatherResponseModel.fromJson(jsonData);
       return result;
     } catch (e) {
-      // dev.log(e.toString());
       return null;
     }
   }

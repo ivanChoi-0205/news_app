@@ -59,9 +59,9 @@ class DrawerFooter extends StatelessWidget {
                   color: Colors.blue,
                   borderRadius: generateButtonRadius,
                 ),
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Icon(Icons.cancel_rounded),
                     SizedBox(width: 20),
                     Text('Back to home'),

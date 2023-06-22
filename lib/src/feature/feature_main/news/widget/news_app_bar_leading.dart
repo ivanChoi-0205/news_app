@@ -24,28 +24,37 @@ class NewsAppBarLeading extends StatelessWidget {
             },
             child: const Icon(
               Icons.menu_rounded,
-              color: Colors.black,
+              color: Colors.white,
             ),
           ),
           const Spacer(),
-          const CircleAvatar(
-            child: Icon(
-              Icons.search_rounded,
-            ),
-          ),
+          Opacity(
+              opacity: scrollRatio,
+              child: const _Icon(icon: Icons.search_rounded)),
           const SizedBox(width: 20),
-          const CircleAvatar(
-            child: Icon(
-              Icons.notifications_rounded,
-            ),
-          ),
+          const _Icon(icon: Icons.notifications_rounded),
           const SizedBox(width: 20),
-          const CircleAvatar(
-            child: Icon(
-              Icons.person_outline_rounded,
-            ),
-          ),
+          const _Icon(icon: Icons.person_outline_rounded),
         ],
+      ),
+    );
+  }
+}
+
+class _Icon extends StatelessWidget {
+  const _Icon({
+    Key? key,
+    required this.icon,
+  }) : super(key: key);
+  final IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      backgroundColor: const Color(0xFFF5F5F5).withOpacity(0.6),
+      child: Icon(
+        icon,
+        color: Colors.black,
       ),
     );
   }

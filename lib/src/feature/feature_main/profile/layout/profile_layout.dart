@@ -16,10 +16,10 @@ class ProfileLayout extends StatelessWidget {
       child: SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
-                children: const [
+                children: [
                   Icon(Icons.menu_rounded, size: 28),
                   Spacer(),
                   SizedBox(width: 48),

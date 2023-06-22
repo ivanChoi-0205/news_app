@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'app_color.dart';
+import 'theme/color_palette.dart';
 
 TextStyle getGenerateTextStyle() => TextStyle(
-      color: AppColorConstants.textColor,
+      color: ColorPalette.textColor,
       fontSize: 18.0,
       height: 1.5,
       fontWeight: FontWeight.w400,
