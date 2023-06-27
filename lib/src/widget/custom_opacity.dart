@@ -13,7 +13,7 @@ class CustomOpacity extends StatelessWidget {
     required this.child,
     required this.opacity,
     this.needTransition = false,
-    this.duration = const Duration(milliseconds: 500),
+    this.duration = const Duration(milliseconds: 250),
     this.curve = Curves.linear,
     this.onEnd,
   }) : super(key: key);
@@ -22,13 +22,18 @@ class CustomOpacity extends StatelessWidget {
   Widget build(BuildContext context) {
     return IgnorePointer(
       ignoring: opacity == 0 ? true : false,
-      child: AnimatedOpacity(
-        duration: duration,
-        opacity: opacity,
-        curve: Curves.linear,
-        onEnd: onEnd,
-        child: child,
-      ),
+      child: needTransition
+          ? AnimatedOpacity(
+              duration: duration,
+              opacity: opacity,
+              curve: curve,
+              onEnd: onEnd,
+              child: child,
+            )
+          : Opacity(
+              opacity: opacity,
+              child: child,
+            ),
     );
   }
 }

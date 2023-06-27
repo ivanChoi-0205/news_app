@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../constant/global_key.dart';
 import '../../../../service/vibration_service.dart';
+import '../../../../widget/custom_opacity.dart';
+import '../util/news_util.dart';
 
 class NewsAppBarLeading extends StatelessWidget {
   const NewsAppBarLeading({
@@ -17,24 +19,34 @@ class NewsAppBarLeading extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Row(
         children: [
-          GestureDetector(
+          _Icon(
+            iconData: Icons.menu_rounded,
+            isAction: false,
             onTap: () {
               clickFeedback();
               rootScaffoldKey.currentState!.openDrawer();
             },
-            child: const Icon(
-              Icons.menu_rounded,
-              color: Colors.white,
-            ),
           ),
           const Spacer(),
-          Opacity(
-              opacity: scrollRatio,
-              child: const _Icon(icon: Icons.search_rounded)),
+          CustomOpacity(
+            opacity: scrollRatio,
+            child: _Icon(
+              iconData: Icons.search_rounded,
+              onTap: () {
+                routeToNewsSearchPage(context: context);
+              },
+            ),
+          ),
           const SizedBox(width: 20),
-          const _Icon(icon: Icons.notifications_rounded),
+          _Icon(
+            iconData: Icons.notifications_rounded,
+            onTap: () {},
+          ),
           const SizedBox(width: 20),
-          const _Icon(icon: Icons.person_outline_rounded),
+          _Icon(
+            iconData: Icons.person_outline_rounded,
+            onTap: () {},
+          ),
         ],
       ),
     );
@@ -44,17 +56,34 @@ class NewsAppBarLeading extends StatelessWidget {
 class _Icon extends StatelessWidget {
   const _Icon({
     Key? key,
-    required this.icon,
+    required this.iconData,
+    this.isAction = true,
+    required this.onTap,
   }) : super(key: key);
-  final IconData icon;
+
+  final IconData iconData;
+  final bool isAction;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
-      backgroundColor: const Color(0xFFF5F5F5).withOpacity(0.6),
-      child: Icon(
-        icon,
-        color: Colors.black,
+    return GestureDetector(
+      onTap: () {
+        clickFeedback();
+        onTap();
+      },
+      child: SizedBox(
+        height: 42.0,
+        width: 42.0,
+        child: CircleAvatar(
+          backgroundColor: isAction
+              ? const Color(0xFFF5F5F5).withOpacity(0.6)
+              : Colors.transparent,
+          child: Icon(
+            iconData,
+            color: isAction ? Colors.black : Colors.white,
+          ),
+        ),
       ),
     );
   }
